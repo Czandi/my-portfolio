@@ -3,5 +3,13 @@
     "LOGO-1": "Junior Fullstack Developer & Designer",
     "LOGO-2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
+  "ABOUT_ME": {
+    "HELLO": "Cześć!",
+    "TEXT": "Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet feugiat ante. Mauris ultricies leo leo, ut fringilla nunc hendrerit quis. Curabitur at ullamcorper mi, lacinia consequat odio. Morbi cursus nunc ac urna pellentesque ultrices.",
+    "MY_SKILLS": "Moje umiejętności",
+    "BACKEND": "Backend",
+    "FRONTEND": "Frontend",
+    "OTHER": "Inne"
+  },
   "PORTFOLIO": "Portfolio"
 }

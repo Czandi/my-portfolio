@@ -36,6 +36,15 @@
             border-radius: 17px 0 0 17px;
             left: 0;
           }
+
+          &.hover {
+            width: 55%;
+            left: 45%;
+
+            &.left {
+              left: 0;
+            }
+          }
         }
 
         .pl,
@@ -62,17 +71,6 @@
         .eng {
           right: 25%;
           transform: translate(50%, -50%);
-        }
-
-        &:hover {
-          .background {
-            width: 55%;
-            left: 45%;
-
-            &.left {
-              left: 0;
-            }
-          }
         }
       }
 

@@ -9,6 +9,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ShadowDirective } from './directives/shadow.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { SkillComponent } from './components/about-me/skill/skill.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -19,6 +21,8 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     ButtonComponent,
     ShadowDirective,
+    AboutMeComponent,
+    SkillComponent,
   ],
   imports: [
     BrowserModule,

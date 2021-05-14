@@ -11,12 +11,17 @@ export class HeaderComponent implements OnInit {
   @ViewChild('pl') switcherPl: ElementRef;
   @ViewChild('eng') switcherEng: ElementRef;
 
-  constructor(private translate: TranslateService) {}
+  private currentLanguage: string;
+
+  constructor(private translate: TranslateService) {
+    this.currentLanguage = translate.currentLang;
+  }
 
   ngOnInit(): void {}
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    this.switcherBackground.nativeElement.classList.remove('hover');
 
     switch (language) {
       case 'pl':
@@ -29,6 +34,19 @@ export class HeaderComponent implements OnInit {
         this.switcherPl.nativeElement.classList.remove('active');
         this.switcherBackground.nativeElement.classList.remove('left');
         break;
+    }
+    this.currentLanguage = language;
+  }
+
+  increaseBackground(language: string) {
+    if (language !== this.currentLanguage) {
+      this.switcherBackground.nativeElement.classList.add('hover');
+    }
+  }
+
+  decreaseBackground(language: string) {
+    if (language !== this.currentLanguage) {
+      this.switcherBackground.nativeElement.classList.remove('hover');
     }
   }
 }

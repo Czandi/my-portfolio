@@ -1,0 +1,149 @@
+@import "../../../assets/variables.scss";
+
+.container {
+  background-color: $primary-green;
+  color: white;
+  display: flex;
+
+  .wrapper {
+    width: 24vw;
+
+    .tunnel {
+      height: 1000px;
+      width: 125px;
+      margin-left: 7vw;
+      background-color: $secondary-green;
+    }
+  }
+
+  .content {
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 7vw;
+    width: 74vw;
+
+    .hello {
+      margin-left: 30px;
+      margin-bottom: 10px;
+    }
+
+    .skills {
+      margin-top: 5vh;
+      text-align: center;
+      width: 100%;
+      position: relative;
+
+      .box-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+
+        .box {
+          color: black;
+          background-color: $light;
+          width: 345px;
+          height: 500px;
+          margin: 0 20px;
+          border-radius: 40px;
+          box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25);
+          position: relative;
+
+          h3 {
+            margin-top: 25px;
+            margin-bottom: 25px;
+          }
+
+          &.mini {
+            height: 300px;
+            margin-top: 200px;
+          }
+
+          .icon {
+            position: absolute;
+
+            &.html5 {
+              top: 24%;
+              left: 13%;
+            }
+
+            &.angular {
+              top: 30%;
+              right: 17%;
+            }
+
+            &.sass {
+              top: 45%;
+              left: 40%;
+            }
+
+            &.js {
+              top: 65%;
+              left: 20%;
+            }
+
+            &.ts {
+              top: 75%;
+              right: 25%;
+            }
+
+            &.java {
+              top: 23%;
+              right: 13%;
+            }
+
+            &.spring {
+              top: 27%;
+              left: 30%;
+            }
+
+            &.mysql {
+              top: 49%;
+              left: 13%;
+            }
+
+            &.postgresql {
+              top: 49%;
+              right: 28%;
+            }
+
+            &.hibernate {
+              top: 73%;
+              right: 50%;
+            }
+
+            &.vsc {
+              top: 35%;
+              left: 10%;
+            }
+
+            &.photoshop {
+              top: 38%;
+              right: 13%;
+            }
+
+            &.git {
+              top: 30%;
+              left: 40%;
+            }
+
+            &.figma {
+              top: 70%;
+              left: 20%;
+            }
+
+            &.idea {
+              top: 67%;
+            }
+          }
+        }
+      }
+
+      .person-walking {
+        position: absolute;
+        right: 10%;
+        top: 17%;
+      }
+    }
+  }
+}
