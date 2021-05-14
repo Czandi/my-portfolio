@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="top-bar">
+    <div class="left-side">
+      <div class="language-switcher">
+        <div class="background left" shadow #switcherBackground></div>
+        <div class="pl active" (click)="switchLanguage('pl')" #pl>pl</div>
+        <div class="eng" (click)="switchLanguage('eng')" #eng>eng</div>
+      </div>
+      <div class="social-media">
+        <img src="assets/icons/facebook.svg" alt="" class="facebook" />
+        <img src="assets/icons/mail.svg" alt="" class="mail" />
+        <img src="assets/icons/github.svg" alt="" class="github" />
+        <img src="assets/icons/linked-in.svg" alt="" class="linked-in" />
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="logo">
+      <h1 shadow>Dominik</h1>
+      <h3>{{ "HEADER.LOGO-1" | translate }}</h3>
+      <p>{{ "HEADER.LOGO-2" | translate }}</p>
+    </div>
+    <app-button class="button" text="Portfolio"></app-button>
+    <img src="assets/icons/shovel.svg" alt="" class="shovel" />
+    <img src="assets/icons/grass.svg" alt="" class="grass" shadow />
+    <img src="assets/icons/desk.svg" alt="" class="desk" />
+  </div>
+</div>

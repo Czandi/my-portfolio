@@ -1,0 +1,15 @@
+<div
+  (mouseenter)="toggle()"
+  (mouseleave)="toggle()"
+  [@expansionTrigger]="status"
+  class="container"
+>
+  <div class="buttons">
+    <div [@topButtonSwitch]="status" class="button on-white">
+      <p>{{ text }}</p>
+    </div>
+    <div [@bottomButtonSwitch]="status" class="under-button on-white">
+      <p>{{ text }}</p>
+    </div>
+  </div>
+</div>

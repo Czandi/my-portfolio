@@ -1,0 +1,65 @@
+@import "../../../assets/variables.scss";
+
+.container {
+  display: flex;
+  width: 200px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+
+  .buttons {
+    position: relative;
+    width: 172px;
+    height: 50px;
+    .button,
+    .under-button {
+      border-radius: 25px;
+      width: fit-content;
+      height: 50px;
+      align-items: center;
+      display: flex;
+      transition: all 0.3s ease;
+      position: absolute;
+
+      p {
+        margin: 20px 40px;
+      }
+    }
+
+    .button {
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      &.on-white {
+        background-color: $primary-green;
+        p {
+          color: white;
+        }
+      }
+
+      &.on-green {
+      }
+
+      &.disable {
+      }
+    }
+
+    .under-button {
+      width: fit-content;
+      top: 5px;
+      left: -7px;
+      &.on-white {
+        background-color: $secondary-green;
+
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
