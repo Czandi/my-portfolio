@@ -11,5 +11,12 @@
     "FRONTEND": "Frontend",
     "OTHER": "Inne"
   },
-  "PORTFOLIO": "Portfolio"
+  "PORTFOLIO": {
+    "PORTFOLIO": "Portfolio",
+    "MY_PROJECTS": "Moje projekty",
+    "APPLICATIONS": "Aplikacje",
+    "GRAPHICS": "Grafika",
+    "GITHUB": "Github",
+    "DEMO": "Demo"
+  }
 }

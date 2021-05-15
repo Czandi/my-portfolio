@@ -11,6 +11,8 @@ import { ShadowDirective } from './directives/shadow.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillComponent } from './components/about-me/skill/skill.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ApplicationComponent } from './components/portfolio/application/application.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -23,6 +25,8 @@ export function createTranslateLoader(http: HttpClient) {
     ShadowDirective,
     AboutMeComponent,
     SkillComponent,
+    PortfolioComponent,
+    ApplicationComponent,
   ],
   imports: [
     BrowserModule,

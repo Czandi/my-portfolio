@@ -43,7 +43,11 @@
       <h2>{{ "HEADER.LOGO-1" | translate }}</h2>
       <p>{{ "HEADER.LOGO-2" | translate }}</p>
     </div>
-    <app-button class="button" [text]="'PORTFOLIO' | translate"></app-button>
+    <app-button
+      class="button"
+      [text]="'PORTFOLIO.PORTFOLIO' | translate"
+      type="header"
+    ></app-button>
     <img src="assets/icons/shovel.svg" alt="" class="shovel" />
     <img src="assets/icons/grass.svg" alt="" class="grass" shadow />
     <img src="assets/icons/desk.svg" alt="" class="desk" />

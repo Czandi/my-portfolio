@@ -8,7 +8,7 @@ import { Skill } from './skill/skill.class';
 })
 export class AboutMeComponent implements OnInit {
   public frontendSkills: Skill[] = [
-    new Skill('html5', 'HTML5'),
+    new Skill('html', 'HTML5'),
     new Skill('angular', 'Angular'),
     new Skill('sass', 'Sass'),
     new Skill('js', 'JavaScript'),

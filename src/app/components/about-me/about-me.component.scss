@@ -4,6 +4,8 @@
   background-color: $primary-green;
   color: white;
   display: flex;
+  z-index: 2;
+  position: relative;
 
   .wrapper {
     width: 24vw;
@@ -33,11 +35,16 @@
       width: 100%;
       position: relative;
 
+      h2 {
+        padding-bottom: 25px;
+      }
+
       .box-wrapper {
         position: relative;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         margin-top: 70px;
+        margin-left: -5%;
 
         .box {
           color: black;
@@ -62,7 +69,7 @@
           .icon {
             position: absolute;
 
-            &.html5 {
+            &.html {
               top: 24%;
               left: 13%;
             }
@@ -141,8 +148,14 @@
 
       .person-walking {
         position: absolute;
-        right: 10%;
+        right: 20%;
         top: 17%;
+      }
+
+      .person-jumping {
+        position: absolute;
+        right: -3%;
+        top: 58%;
       }
     }
   }

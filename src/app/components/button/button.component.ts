@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import {
   expansionTriggerAnimation,
   bottomButtonSwitch,
@@ -11,31 +17,22 @@ import {
   styleUrls: ['./button.component.scss'],
   animations: [expansionTriggerAnimation, bottomButtonSwitch, topButtonSwitch],
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent implements OnInit, OnChanges {
   @Input() text: string;
+  @Input() type: string = 'green';
   public onButton: boolean;
-  public isExpanded: boolean;
   public status: string = 'off';
 
-  constructor() {
-    this.onButton = false;
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 
-  onHover() {
-    this.onButton = true;
-    console.log(this.onButton);
-  }
-
-  onLeave() {
-    this.onButton = false;
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
   toggle() {
-    this.isExpanded = !this.isExpanded;
-    this.status = !this.isExpanded ? 'off' : 'on';
-
-    console.log('Status:', this.status);
+    if (this.type === 'header') {
+      this.onButton = !this.onButton;
+      this.status = !this.onButton ? 'off' : 'on';
+    }
   }
 }

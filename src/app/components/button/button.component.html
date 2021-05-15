@@ -4,12 +4,12 @@
   [@expansionTrigger]="status"
   class="container"
 >
-  <div class="buttons">
-    <div [@topButtonSwitch]="status" class="button on-white">
+  <div [ngClass]="type" class="buttons">
+    <div [@topButtonSwitch]="status" [ngClass]="type" class="button">
       <p>{{ text }}</p>
     </div>
-    <div [@bottomButtonSwitch]="status" class="under-button on-white">
-      <p>{{ text }}</p>
+    <div [@bottomButtonSwitch]="status" [ngClass]="type" class="under-button">
+      <p *ngIf="type === 'header'">{{ text }}</p>
     </div>
   </div>
 </div>

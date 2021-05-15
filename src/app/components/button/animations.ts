@@ -1,3 +1,4 @@
+import { Colors } from '../../../assets/variables';
 import {
   trigger,
   state,
@@ -21,20 +22,24 @@ const bottomButtonSwitchAnimationForward = animate(
   ])
 );
 
-const bottomButtonSwitchAnimationBackward = animate(
-  animateTime,
-  keyframes([
-    style({ left: '0', top: '0', zIndex: 2 }),
-    style({ left: '-47px', top: '35px' }),
-    style({ left: '-7px', top: '5px', zIndex: 1 }),
-  ])
-);
-
 const topButtonSwitchAnimationForward = animate(
   animateTime,
   keyframes([
     style({ left: '0', top: '0', zIndex: 2 }),
     style({ left: '40px', top: '-30px' }),
+    style({ left: '-7px', top: '5px', zIndex: 1 }),
+  ])
+);
+
+const topButtonToDisableAnimation = animate(animateTime, keyframes([]));
+
+const bottomButtonToDisableAnimation = animate(animateTime, keyframes([]));
+
+const bottomButtonSwitchAnimationBackward = animate(
+  animateTime,
+  keyframes([
+    style({ left: '0', top: '0', zIndex: 2 }),
+    style({ left: '-47px', top: '35px' }),
     style({ left: '-7px', top: '5px', zIndex: 1 }),
   ])
 );
@@ -48,18 +53,28 @@ const topButtonSwitchAnimationBackward = animate(
   ])
 );
 
+const disableTopButtonStyle = {
+  backgroundColor: Colors.light,
+  boxShadow: 'inset 5px 5px 10px rgba(0, 0, 0, 0.25)',
+};
+
+const disableBottomButtonStyle = {
+  opacity: 0,
+};
+
 const deafultTopPositionStyle = {
   top: 0,
   left: 0,
   zIndex: 2,
 };
+
 const defaultBottomPositionStyle = {
   left: '-7px',
   top: '5px',
   zIndex: 1,
 };
 
-function switchButtons0() {
+function offToOnAnimation() {
   return group([
     query(
       '@bottomButtonSwitch',
@@ -72,7 +87,7 @@ function switchButtons0() {
   ]);
 }
 
-function switchButtons1() {
+function onToOffAnimation() {
   return group([
     query(
       '@bottomButtonSwitch',
@@ -85,18 +100,41 @@ function switchButtons1() {
   ]);
 }
 
-//
+function toDisableAnimation() {
+  return group([
+    query(
+      '@bottomButtonSwitch',
+      group([animateChild(), bottomButtonToDisableAnimation])
+    ),
+    query(
+      '@topButtonSwitch',
+      group([animateChild(), topButtonToDisableAnimation])
+    ),
+  ]);
+}
+
+function fromDisableAnimation() {
+  return group([
+    query('@bottomButtonSwitch', group([])),
+    query('@topButtonSwitch', group([])),
+  ]);
+}
+
 export const expansionTriggerAnimation = trigger('expansionTrigger', [
-  transition('on => off', switchButtons1()),
-  transition('off => on', switchButtons0()),
+  transition('on => off', onToOffAnimation()),
+  transition('off => on', offToOnAnimation()),
+  transition('* => disable', toDisableAnimation()),
+  transition('disable => *', fromDisableAnimation()),
 ]);
 
 export const topButtonSwitch = trigger('topButtonSwitch', [
   state('on', style(defaultBottomPositionStyle)),
   state('off', style(deafultTopPositionStyle)),
+  state('disable', style(disableTopButtonStyle)),
 ]);
 
 export const bottomButtonSwitch = trigger('bottomButtonSwitch', [
   state('on', style(deafultTopPositionStyle)),
   state('off', style(defaultBottomPositionStyle)),
+  state('disable', style(disableBottomButtonStyle)),
 ]);
