@@ -13,6 +13,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillComponent } from './components/about-me/skill/skill.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ApplicationComponent } from './components/portfolio/application/application.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -27,6 +29,8 @@ export function createTranslateLoader(http: HttpClient) {
     SkillComponent,
     PortfolioComponent,
     ApplicationComponent,
+    ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

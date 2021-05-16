@@ -1,3 +1,5 @@
+@import "./assets/variables.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -14,4 +16,39 @@ h2 {
 h1 {
   font-weight: 900;
   font-size: 150px;
+}
+
+.section-header {
+  h2 {
+    padding-top: 65px;
+    margin-bottom: -17px;
+  }
+
+  h3 {
+    padding-bottom: 35px;
+  }
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: calc(100% - 40px);
+}
+
+label {
+  padding-left: 20px;
+}
+
+input,
+textarea {
+  border-radius: 40px;
+  border: none;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 5px 20px;
+  outline: none;
+}
+
+textarea {
+  padding: 20px;
 }

@@ -18,5 +18,14 @@
     "GRAPHICS": "Grafika",
     "GITHUB": "Github",
     "DEMO": "Demo"
-  }
+  },
+  "CONTACT": {
+    "CONTACT": "Kontakt",
+    "CONTACT_WITH_ME": "Skontaktuj się ze mną",
+    "EMAIL": "Email",
+    "SUBJECT": "Temat",
+    "BODY": "Treść",
+    "SEND": "Wyślij"
+  },
+  "FOOTER": {}
 }

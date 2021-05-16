@@ -1,24 +1,28 @@
 <div class="container">
-  <div class="shadow">
-    <div class="wrapper">
+  <div class="wrapper">
+    <div class="section-header">
       <h2>{{ "PORTFOLIO.PORTFOLIO" | translate }}</h2>
       <h3>{{ "PORTFOLIO.MY_PROJECTS" | translate }}</h3>
-
-      <div class="button-wrapper">
-        <app-button
-          [type]="selectedPortfolio === 'applications' ? 'disable' : 'basic'"
-          [text]="'PORTFOLIO.APPLICATIONS' | translate"
-          class="button apps"
-          (click)="changePortfolio('applications')"
-        ></app-button>
-        <app-button
-          [type]="selectedPortfolio === 'graphics' ? 'disable' : 'basic'"
-          [text]="'PORTFOLIO.GRAPHICS' | translate"
-          class="button graphs"
-          (click)="changePortfolio('graphics')"
-        ></app-button>
-      </div>
     </div>
+
+    <div class="button-wrapper">
+      <app-button
+        [type]="selectedPortfolio === 'applications' ? 'disable' : 'basic'"
+        [text]="'PORTFOLIO.APPLICATIONS' | translate"
+        class="button apps"
+        (click)="changePortfolio('applications')"
+      ></app-button>
+      <app-button
+        [type]="selectedPortfolio === 'graphics' ? 'disable' : 'basic'"
+        [text]="'PORTFOLIO.GRAPHICS' | translate"
+        class="button graphs"
+        (click)="changePortfolio('graphics')"
+      ></app-button>
+    </div>
+  </div>
+
+  <div class="shadow">
+    <div class="edge"></div>
   </div>
 
   <div *ngIf="selectedPortfolio === 'applications'" class="applications">

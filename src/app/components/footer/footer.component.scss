@@ -1,0 +1,14 @@
+@import "../../../assets/variables.scss";
+
+.container {
+  background-color: $primary-green;
+  color: $light;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 0.7em;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="shadow">
+    <div class="edge"></div>
+  </div>
+  <div class="wrapper">
+    <div class="section-header">
+      <h2>{{ "CONTACT.CONTACT" | translate }}</h2>
+      <h3>{{ "CONTACT.CONTACT_WITH_ME" | translate }}</h3>
+    </div>
+    <form action="">
+      <div class="email">
+        <label for="email">{{ "CONTACT.EMAIL" | translate }}</label>
+        <input
+          id="email"
+          type="text"
+          [placeholder]="'CONTACT.EMAIL' | translate"
+        />
+      </div>
+      <div class="subject">
+        <label for="subject"> {{ "CONTACT.SUBJECT" | translate }} </label>
+        <input
+          id="subject"
+          type="text"
+          [placeholder]="'CONTACT.SUBJECT' | translate"
+        />
+      </div>
+      <div class="body">
+        <label for="body">{{ "CONTACT.BODY" | translate }}</label>
+        <textarea
+          name=""
+          id="body"
+          cols="30"
+          rows="10"
+          [placeholder]="'CONTACT.BODY' | translate"
+        ></textarea>
+      </div>
+      <app-button type="basic" [text]="'CONTACT.SEND' | translate"></app-button>
+    </form>
+  </div>
+</div>
