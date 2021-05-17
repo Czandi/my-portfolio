@@ -1,4 +1,5 @@
 @import "../../../assets/variables.scss";
+@import "../../../assets/responsive.mixin.scss";
 
 .container {
   margin-top: -1px;
@@ -48,7 +49,7 @@
 
   .applications,
   .graphics {
-    width: 70vw;
+    width: 90vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -63,5 +64,15 @@
       margin-right: 3vw;
       margin-bottom: 13vh;
     }
+  }
+}
+
+@include media("<=1300px") {
+  .wrapper {
+    height: 150px !important;
+  }
+
+  .item {
+    margin-bottom: 8vh !important;
   }
 }

@@ -1,4 +1,5 @@
 @import "../../../../assets/variables.scss";
+@import "../../../../assets/responsive.mixin.scss";
 
 .wrapper {
   width: 500px;
@@ -79,6 +80,25 @@
     &:hover {
       img {
         margin-top: 130px;
+      }
+    }
+  }
+}
+
+@include media("<=1300px") {
+  .wrapper {
+    width: 400px !important;
+
+    .top-bar {
+      .buttons {
+        // width: 260px !important;
+        right: 0 !important;
+      }
+    }
+
+    .image {
+      .description {
+        height: calc(100% - 140px);
       }
     }
   }

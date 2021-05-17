@@ -1,162 +1,246 @@
 @import "../../../assets/variables.scss";
+@import "../../../assets/responsive.mixin.scss";
 
 .container {
   background-color: $primary-green;
   color: white;
-  display: flex;
   z-index: 2;
   position: relative;
+  overflow: hidden;
 
   .wrapper {
-    width: 24vw;
-
+    width: 14vw;
+    height: 1px;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
     .tunnel {
-      height: 1000px;
+      position: absolute;
+      height: 1300px;
+      right: 0;
+      top: 0;
       width: 125px;
-      margin-left: 7vw;
+      margin-right: 0;
+      margin-left: auto;
       background-color: $secondary-green;
     }
   }
 
   .content {
-    margin-right: 0;
-    margin-left: auto;
-    padding-right: 7vw;
-    width: 74vw;
+    display: inline-block;
+    vertical-align: top;
+    width: 85vw;
+    padding-bottom: 60px;
 
-    .hello {
-      margin-left: 30px;
-      margin-bottom: 10px;
+    .about-me {
+      padding: 0 10vw;
     }
 
     .skills {
-      margin-top: 5vh;
+      margin-top: 50px;
       text-align: center;
-      width: 100%;
-      position: relative;
+    }
 
-      h2 {
-        padding-bottom: 25px;
-      }
+    .box-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 550px;
+      align-items: flex-end;
 
-      .box-wrapper {
+      .box {
+        color: black;
+        background-color: $light;
+        width: 345px;
+        height: 500px;
+        margin: 0 20px;
+        border-radius: 40px;
+        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25);
         position: relative;
-        display: flex;
-        justify-content: left;
-        margin-top: 70px;
-        margin-left: -5%;
 
-        .box {
-          color: black;
-          background-color: $light;
-          width: 345px;
-          height: 500px;
-          margin: 0 20px;
-          border-radius: 40px;
-          box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25);
-          position: relative;
+        h3 {
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
 
-          h3 {
-            margin-top: 25px;
-            margin-bottom: 25px;
+        &.mini {
+          position: absolute;
+          bottom: 0;
+          height: 300px;
+        }
+
+        .icon {
+          position: absolute;
+
+          &.html {
+            top: 24%;
+            left: 13%;
           }
 
-          &.mini {
-            height: 300px;
-            margin-top: 200px;
+          &.angular {
+            top: 30%;
+            right: 17%;
           }
 
-          .icon {
-            position: absolute;
+          &.sass {
+            top: 45%;
+            left: 40%;
+          }
 
-            &.html {
-              top: 24%;
-              left: 13%;
-            }
+          &.js {
+            top: 65%;
+            left: 20%;
+          }
 
-            &.angular {
-              top: 30%;
-              right: 17%;
-            }
+          &.ts {
+            top: 75%;
+            right: 25%;
+          }
 
-            &.sass {
-              top: 45%;
-              left: 40%;
-            }
+          &.java {
+            top: 23%;
+            right: 13%;
+          }
 
-            &.js {
-              top: 65%;
-              left: 20%;
-            }
+          &.spring {
+            top: 27%;
+            left: 30%;
+          }
 
-            &.ts {
-              top: 75%;
-              right: 25%;
-            }
+          &.mysql {
+            top: 49%;
+            left: 13%;
+          }
 
-            &.java {
-              top: 23%;
-              right: 13%;
-            }
+          &.postgresql {
+            top: 49%;
+            right: 28%;
+          }
 
-            &.spring {
-              top: 27%;
-              left: 30%;
-            }
+          &.hibernate {
+            top: 73%;
+            right: 50%;
+          }
 
-            &.mysql {
-              top: 49%;
-              left: 13%;
-            }
+          &.vsc {
+            top: 35%;
+            left: 10%;
+          }
 
-            &.postgresql {
-              top: 49%;
-              right: 28%;
-            }
+          &.photoshop {
+            top: 38%;
+            right: 13%;
+          }
 
-            &.hibernate {
-              top: 73%;
-              right: 50%;
-            }
+          &.git {
+            top: 30%;
+            left: 40%;
+          }
 
-            &.vsc {
-              top: 35%;
-              left: 10%;
-            }
+          &.figma {
+            top: 70%;
+            left: 20%;
+          }
 
-            &.photoshop {
-              top: 38%;
-              right: 13%;
-            }
-
-            &.git {
-              top: 30%;
-              left: 40%;
-            }
-
-            &.figma {
-              top: 70%;
-              left: 20%;
-            }
-
-            &.idea {
-              top: 67%;
-            }
+          &.idea {
+            top: 67%;
           }
         }
       }
 
-      .person-walking {
-        position: absolute;
-        right: 20%;
-        top: 17%;
-      }
+      .mini-box-wrapper {
+        width: 600px;
+        height: 500px;
+        position: relative;
 
-      .person-jumping {
-        position: absolute;
-        right: -3%;
-        top: 58%;
+        .person-walking {
+          position: absolute;
+          top: -7.5%;
+          left: 15%;
+        }
+        .person-jumping {
+          position: absolute;
+          top: 50%;
+          right: 0;
+        }
       }
     }
+  }
+}
+
+@include media("<=1610px") {
+  .box-wrapper {
+    .mini-box-wrapper {
+      width: 350px !important;
+
+      .person-jumping {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media("<=1380px") {
+  .box-wrapper {
+    height: 500px !important;
+    .box {
+      width: 300px !important;
+      height: 450px !important;
+      margin: 0 15px !important;
+
+      &.mini {
+        height: 240px !important;
+      }
+    }
+
+    .mini-box-wrapper {
+      height: 450px !important;
+
+      .person-walking {
+        top: -5% !important;
+      }
+    }
+  }
+}
+
+@include media("<=desktop") {
+  .content {
+    padding-bottom: 300px !important;
+    .box-wrapper {
+      margin-top: 60px;
+      .box {
+        margin: 0 20px !important;
+      }
+
+      .mini-box-wrapper {
+        margin-top: 40px !important;
+        height: 240px !important;
+        width: 680px !important;
+
+        .person-walking {
+          display: none;
+        }
+
+        .person-jumping {
+          display: inline-block;
+          top: 5% !important;
+          right: 5% !important;
+        }
+      }
+    }
+  }
+}
+
+@include media("<=1100px") {
+  .wrapper {
+    display: none !important;
+  }
+
+  .content {
+    width: 100vw !important;
+  }
+
+  .hello {
+    margin-left: 40px;
   }
 }

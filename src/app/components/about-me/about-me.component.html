@@ -28,25 +28,27 @@
             [class]="'icon ' + skill.fileName"
           ></app-skill>
         </div>
-        <div class="box mini other">
-          <h3>{{ "ABOUT_ME.OTHER" | translate }}</h3>
-          <app-skill
-            *ngFor="let skill of otherSkills"
-            [skill]="skill"
-            [class]="'icon ' + skill.fileName"
-          ></app-skill>
+        <div class="mini-box-wrapper">
+          <div class="box mini other">
+            <h3>{{ "ABOUT_ME.OTHER" | translate }}</h3>
+            <app-skill
+              *ngFor="let skill of otherSkills"
+              [skill]="skill"
+              [class]="'icon ' + skill.fileName"
+            ></app-skill>
+          </div>
+          <img
+            class="person-walking"
+            src="assets/icons/person-walking.svg"
+            alt=""
+          />
+          <img
+            src="assets/icons/person-jumping.svg"
+            alt=""
+            class="person-jumping"
+          />
         </div>
       </div>
-      <img
-        class="person-walking"
-        src="assets/icons/person-walking.svg"
-        alt=""
-      />
-      <img
-        src="assets/icons/person-jumping.svg"
-        alt=""
-        class="person-jumping"
-      />
     </div>
   </div>
 </div>

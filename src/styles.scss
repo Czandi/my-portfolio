@@ -1,4 +1,5 @@
 @import "./assets/variables.scss";
+@import "./assets/responsive.mixin.scss";
 
 * {
   margin: 0;
@@ -51,4 +52,32 @@ textarea {
 
 textarea {
   padding: 20px;
+}
+
+@include media("<=medium-desktop") {
+  * {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  h1 {
+    font-size: 125px;
+  }
+}
+
+@include media("<=desktop") {
+  * {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 33px;
+  }
+
+  h1 {
+    font-size: 100px;
+  }
 }
