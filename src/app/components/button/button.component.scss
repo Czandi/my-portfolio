@@ -36,7 +36,7 @@
 
     p {
       width: 100%;
-      margin: 20px auto;
+      // margin: 20px auto;
     }
 
     .button {
@@ -56,6 +56,8 @@
       &.portfolio-secondary {
         background-color: transparent;
         border: 3px solid $primary-green;
+        box-sizing: border-box;
+        padding: 2px !important;
 
         p {
           color: $dark;
@@ -132,11 +134,33 @@
   }
 }
 
+@include media(">=big-desktop") {
+  .basic,
+  .header,
+  .disable {
+    width: 210px !important;
+    height: 65px !important;
+  }
+
+  .button,
+  .under-button {
+    border-radius: 35px !important;
+  }
+}
+
 @include media("<=medium-desktop") {
   .basic,
   .header,
   .disable {
     width: 152px !important;
     height: 45px !important;
+  }
+}
+
+@include media("<=phone") {
+  .portfolio,
+  .portfolio-secondary {
+    width: 83px !important;
+    height: 35px !important;
   }
 }

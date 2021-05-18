@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
   user-select: none;
+  overflow: hidden;
 
   .top-bar {
     position: relative;
@@ -152,8 +153,15 @@
       top: 15vh;
 
       h1 {
+        position: relative;
         margin-bottom: -40px;
         color: $primary-green;
+      }
+
+      h2 {
+        position: relative;
+        z-index: 12;
+        width: fit-content;
       }
     }
 
@@ -174,8 +182,9 @@
 
     .shovel {
       position: absolute;
-      bottom: -2vh;
+      bottom: -0.2vh;
       left: 10vw;
+      margin-bottom: -20px;
     }
 
     .button {
@@ -183,6 +192,27 @@
       right: 23vw;
       top: 20vh;
     }
+  }
+}
+
+@include media(">=big-desktop") {
+  .logo {
+    width: 1300px !important;
+  }
+
+  .shovel {
+    transform: translateY(-15%) scale(1.4);
+    left: 14vw !important;
+  }
+
+  .grass {
+    transform: translateY(-15%) scale(1.4);
+    left: 25vw !important;
+  }
+
+  .desk {
+    transform: translateY(-20%) scale(1.4);
+    right: 8vw !important;
   }
 }
 
@@ -274,5 +304,39 @@
 @include media("<=1100px") {
   .grass {
     left: 5vw !important;
+  }
+}
+
+@include media("<=1000px") {
+  .grass {
+    display: none;
+  }
+
+  .desk {
+    left: 50%;
+    transform: translate(-50%, 15%) scale(0.7);
+  }
+
+  .logo {
+    position: relative !important;
+    width: 100vw !important;
+    left: auto !important;
+    right: auto !important;
+    top: 5vh !important;
+  }
+
+  .button {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: 10vh !important;
+  }
+}
+
+@include media("<=tablet") {
+  .desk {
+    width: 90vw;
+    height: auto;
+    transform: translateX(-50%);
   }
 }

@@ -48,10 +48,25 @@ textarea {
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 5px 20px;
   outline: none;
+  resize: none;
 }
 
 textarea {
   padding: 20px;
+}
+
+@include media(">=big-desktop") {
+  * {
+    font-size: 35px !important;
+  }
+
+  h2 {
+    font-size: 67px !important;
+  }
+
+  h1 {
+    font-size: 200px !important;
+  }
 }
 
 @include media("<=medium-desktop") {
@@ -79,5 +94,26 @@ textarea {
 
   h1 {
     font-size: 100px;
+  }
+}
+
+@include media("<=phone") {
+  * {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  .section-header {
+    h2 {
+      padding-top: 30px;
+      margin-bottom: -10px !important;
+    }
   }
 }

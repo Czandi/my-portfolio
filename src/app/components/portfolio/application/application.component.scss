@@ -36,7 +36,7 @@
     .buttons {
       display: inline-block;
       position: absolute;
-      width: 300px;
+      // width: 300px;
       right: 10px;
       .button {
         display: inline-block;
@@ -53,7 +53,7 @@
     .description {
       box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25);
       width: 100%;
-      height: calc(100% - 80px);
+      height: 60%;
       position: absolute;
       top: 0;
       left: 0;
@@ -92,14 +92,30 @@
     .top-bar {
       .buttons {
         // width: 260px !important;
-        right: 0 !important;
+        right: 5px !important;
       }
     }
 
     .image {
       .description {
-        height: calc(100% - 140px);
+        // height: calc(100% - 140px);
       }
     }
+  }
+}
+
+@include media("<=phone") {
+  .wrapper {
+    width: 95vw !important;
+
+    .image {
+      .description {
+        height: 54%;
+      }
+    }
+  }
+
+  .button {
+    margin: 0 5px !important;
   }
 }
