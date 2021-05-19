@@ -7,6 +7,24 @@
   z-index: 2;
   position: relative;
   overflow: hidden;
+  z-index: 120;
+  .hamburger-wrapper {
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    clip: rect(0, auto, auto, 0);
+
+    .hamburger {
+      .line {
+        background-color: $light;
+      }
+      &.expanded {
+        .line {
+          background-color: $primary-green !important;
+        }
+      }
+    }
+  }
 
   .wrapper {
     width: 14vw;

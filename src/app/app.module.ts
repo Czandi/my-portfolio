@@ -15,6 +15,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ApplicationComponent } from './components/portfolio/application/application.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarService } from './services/navbar.service';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -31,6 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
     ApplicationComponent,
     ContactComponent,
     FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [NavbarService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

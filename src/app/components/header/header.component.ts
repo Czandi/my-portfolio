@@ -4,13 +4,16 @@ import {
   ElementRef,
   ViewChild,
   AfterViewInit,
+  OnDestroy,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { popUpAnimation } from './header.animations';
+import { NavbarService } from '../../services/navbar.service';
 import {
   slideFromBottomAnimation,
   slideFromTopAnimation,
 } from './header.animations';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +21,7 @@ import {
   styleUrls: ['./header.component.scss'],
   animations: [slideFromBottomAnimation, slideFromTopAnimation, popUpAnimation],
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('switcherBackground') switcherBackground: ElementRef;
   @ViewChild('pl') switcherPl: ElementRef;
   @ViewChild('eng') switcherEng: ElementRef;
@@ -27,15 +30,26 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   private currentLanguage: string;
   private headerLine: string;
   private letterIndex: number = 0;
+  private navbarServiceSub: Subscription;
 
-  public slideIn: string = 'visible';
-  public popUp: string = 'visible';
+  public slideIn: string = 'hide';
+  public popUp: string = 'hide';
+  public showNavbar: boolean = false;
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    private navbarService: NavbarService
+  ) {
     this.currentLanguage = translate.currentLang;
     translate.get('HEADER.LOGO-1').subscribe((res: string) => {
       this.headerLine = res;
     });
+
+    this.navbarServiceSub = this.navbarService
+      .onShowNavbar()
+      .subscribe((showNavbar) => {
+        this.showNavbar = showNavbar;
+      });
   }
 
   ngOnInit(): void {
@@ -52,6 +66,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.typing();
     }, 200);
+  }
+
+  ngOnDestroy(): void {
+    this.navbarServiceSub.unsubscribe();
   }
 
   switchLanguage(language: string) {
@@ -97,5 +115,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.typing();
       }, 40);
     }
+  }
+
+  toggleNavbar() {
+    this.showNavbar = !this.showNavbar;
+    this.navbarService.setShowNavbar(this.showNavbar);
   }
 }

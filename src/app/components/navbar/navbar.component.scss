@@ -1,0 +1,59 @@
+@import "../../../assets/variables.scss";
+
+.container {
+  padding: 100px 100px 20px 20px;
+  position: fixed;
+  top: -400px;
+  right: -410px;
+  z-index: 50;
+  transition: all 0.3s ease;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  a {
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 10px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      bottom: 0.2em;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 0;
+      background: $light;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &.expanded {
+    right: -100px !important;
+    top: -100px !important;
+  }
+
+  &.green {
+    background-color: rgba(108, 174, 0, 1);
+    a {
+      color: $light;
+    }
+  }
+
+  &.white {
+    background-color: $light;
+    a {
+      color: $primary-green;
+    }
+  }
+}

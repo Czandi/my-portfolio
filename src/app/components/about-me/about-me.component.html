@@ -1,4 +1,17 @@
 <div class="container">
+  <div class="hamburger-wrapper">
+    <div
+      (click)="toggleNavbar()"
+      [ngClass]="showNavbar ? 'expanded' : ''"
+      class="hamburger"
+    >
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <app-navbar [style]="'white'" class="navbar"></app-navbar>
+  </div>
+
   <div class="wrapper">
     <div class="tunnel"></div>
   </div>

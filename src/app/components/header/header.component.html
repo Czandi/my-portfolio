@@ -29,12 +29,17 @@
         <img src="assets/icons/linked-in.svg" alt="" class="linked-in" />
       </div>
     </div>
-    <div class="right-side">
-      <div class="hamburger">
+    <div class="hamburger-wrapper">
+      <div
+        (click)="toggleNavbar()"
+        [ngClass]="showNavbar ? 'expanded' : ''"
+        class="hamburger"
+      >
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </div>
+      <app-navbar [style]="'green'" class="navbar"></app-navbar>
     </div>
   </div>
   <div class="content">

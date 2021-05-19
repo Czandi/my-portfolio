@@ -25,10 +25,11 @@
   overflow: hidden;
 
   .top-bar {
-    position: fixed;
+    position: absolute;
     height: 50px;
     margin: 10px 20px;
     width: calc(100vw - 40px);
+    z-index: 90;
     .left-side,
     .right-side {
       position: absolute;
@@ -133,6 +134,10 @@
 
     .right-side {
       right: 0;
+      position: fixed;
+      top: 35px;
+      right: 20px;
+
       .hamburger {
         position: relative;
         width: 40px;
@@ -147,6 +152,7 @@
           transform: translateY(-50%);
           top: 0;
           border-radius: 2px;
+          transition: all 0.3s ease;
 
           &:nth-of-type(1) {
             top: 0;
@@ -161,7 +167,38 @@
 
         &:hover {
           cursor: pointer;
-          transform: scale(1.1);
+          transform: translateY(-5%);
+          // margin-top: -2%;
+
+          .line {
+            &:nth-of-type(1) {
+              transform: rotate(3deg);
+            }
+
+            &:nth-of-type(2) {
+              transform: translateY(5%);
+            }
+
+            &:nth-of-type(3) {
+              transform: rotate(-3deg);
+            }
+          }
+        }
+
+        &.expanded {
+          .line {
+            &:nth-of-type(1) {
+              transform: translateY(260%) rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+              transform: translate(170%, 5%);
+            }
+
+            &:nth-of-type(3) {
+              transform: translateY(-260%) rotate(-45deg);
+            }
+          }
         }
       }
     }
@@ -183,7 +220,7 @@
 
       h2 {
         position: relative;
-        z-index: 12;
+        z-index: 122;
         width: fit-content;
         margin: 0 auto;
       }
@@ -267,11 +304,6 @@
       transform: translate(25%, -50%) scale(1.5) !important;
     }
   }
-
-  .hamburger {
-    width: 52px !important;
-    height: 28px !important;
-  }
 }
 
 @include media("<=medium-desktop") {
@@ -353,11 +385,6 @@
     img {
       transform: translate(25%, -50%) scale(0.9) !important;
     }
-  }
-
-  .hamburger {
-    width: 30px !important;
-    height: 18px !important;
   }
 }
 
