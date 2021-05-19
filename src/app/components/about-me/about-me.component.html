@@ -10,9 +10,11 @@
     </div>
 
     <div class="skills">
-      <h2 class="my-skills">{{ "ABOUT_ME.MY_SKILLS" | translate }}</h2>
-      <div class="box-wrapper">
-        <div class="box frontend">
+      <h2 class="my-skills" #mySkillHeader>
+        {{ "ABOUT_ME.MY_SKILLS" | translate }}
+      </h2>
+      <div [@boxWrapper]="boxAnimation" class="box-wrapper">
+        <div [@boxSlideIn]="boxAnimation" class="box frontend">
           <h3>{{ "ABOUT_ME.FRONTEND" | translate }}</h3>
           <app-skill
             *ngFor="let skill of frontendSkills"
@@ -20,7 +22,7 @@
             [class]="'icon ' + skill.fileName"
           ></app-skill>
         </div>
-        <div class="box backend">
+        <div [@boxSlideIn]="boxAnimation" class="box backend">
           <h3>{{ "ABOUT_ME.BACKEND" | translate }}</h3>
           <app-skill
             *ngFor="let skill of backendSkills"
@@ -28,7 +30,7 @@
             [class]="'icon ' + skill.fileName"
           ></app-skill>
         </div>
-        <div class="mini-box-wrapper">
+        <div [@boxSlideIn]="boxAnimation" class="mini-box-wrapper">
           <div class="box mini other">
             <h3>{{ "ABOUT_ME.OTHER" | translate }}</h3>
             <app-skill

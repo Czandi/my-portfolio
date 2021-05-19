@@ -6,13 +6,17 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { iconAnimation } from './header.animations';
+import { popUpAnimation } from './header.animations';
+import {
+  slideFromBottomAnimation,
+  slideFromTopAnimation,
+} from './header.animations';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [iconAnimation],
+  animations: [slideFromBottomAnimation, slideFromTopAnimation, popUpAnimation],
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   @ViewChild('switcherBackground') switcherBackground: ElementRef;
@@ -24,6 +28,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   private headerLine: string;
   private letterIndex: number = 0;
 
+  public slideIn: string = 'visible';
+  public popUp: string = 'visible';
+
   constructor(private translate: TranslateService) {
     this.currentLanguage = translate.currentLang;
     translate.get('HEADER.LOGO-1').subscribe((res: string) => {
@@ -31,7 +38,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.slideIn = 'visible';
+    }, 2400);
+
+    setTimeout(() => {
+      this.popUp = 'visible';
+    }, 2500);
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

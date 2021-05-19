@@ -1,17 +1,34 @@
 @import "../../../assets/variables.scss";
 @import "../../../assets/responsive.mixin.scss";
 
+@mixin blowAnimation($transform) {
+  @keyframes skew {
+    0% {
+      transform: skewX(-3deg) translateX(11px) $transform;
+    }
+    50% {
+      transform: skewX(3deg) translateX(-11px) $transform;
+    }
+    100% {
+      transform: skewX(-3deg) translateX(11px) $transform;
+    }
+  }
+
+  animation: skew 6s infinite ease;
+}
+
 .container {
-  height: 92vh;
+  height: 94vh;
   width: 100%;
   position: relative;
   user-select: none;
   overflow: hidden;
 
   .top-bar {
-    position: relative;
+    position: fixed;
     height: 50px;
-    margin: 20px;
+    margin: 10px 20px;
+    width: calc(100vw - 40px);
     .left-side,
     .right-side {
       position: absolute;
@@ -120,6 +137,7 @@
         position: relative;
         width: 40px;
         height: 22px;
+        transition: transform 0.3s ease;
 
         .line {
           position: absolute;
@@ -139,6 +157,11 @@
           &:nth-of-type(3) {
             top: 100%;
           }
+        }
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
         }
       }
     }
@@ -162,6 +185,7 @@
         position: relative;
         z-index: 12;
         width: fit-content;
+        margin: 0 auto;
       }
     }
 
@@ -178,6 +202,7 @@
 
     .grass {
       left: 20vw;
+      @include blowAnimation(scale(1));
     }
 
     .shovel {
@@ -197,22 +222,55 @@
 
 @include media(">=big-desktop") {
   .logo {
-    width: 1300px !important;
+    width: 1400px !important;
   }
 
   .shovel {
-    transform: translateY(-15%) scale(1.4);
+    transform: translateY(-15%) scale(1.5);
     left: 14vw !important;
   }
 
   .grass {
-    transform: translateY(-15%) scale(1.4);
+    @include blowAnimation(translateY(-20%) scale(1.5));
     left: 25vw !important;
   }
 
   .desk {
-    transform: translateY(-20%) scale(1.4);
-    right: 8vw !important;
+    transform: translateY(-25%) scale(1.5);
+    right: 12vw !important;
+  }
+
+  .top-bar {
+    height: 70px !important;
+    margin: 20px 30px !important;
+  }
+
+  .language-switcher {
+    display: inline-block;
+    width: 180px !important;
+    height: 50px !important;
+
+    .background {
+      border-radius: 0 25px 25px 0 !important;
+      &.left {
+        border-radius: 25px 0 0 25px !important;
+      }
+    }
+  }
+
+  .social-media {
+    height: 50px !important;
+    width: 340px !important;
+    margin-left: 20px;
+
+    img {
+      transform: translate(25%, -50%) scale(1.5) !important;
+    }
+  }
+
+  .hamburger {
+    width: 52px !important;
+    height: 28px !important;
   }
 }
 
@@ -222,7 +280,9 @@
   }
 
   .grass {
-    transform: translateY(10%) scale(0.8);
+    // transform: translateY(10%) scale(0.8);
+    @include blowAnimation(translateY(10%) scale(0.8));
+    // margin-bottom: -6.2vh;
     left: 20vw !important;
   }
 

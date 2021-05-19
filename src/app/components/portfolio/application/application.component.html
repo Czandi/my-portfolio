@@ -1,33 +1,35 @@
-<div class="wrapper">
-  <div class="top-bar">
-    <div class="info">
-      <h4>{{ title }}</h4>
-      <div class="stack">
-        <img
-          *ngFor="let item of stack"
-          [src]="'assets/icons/' + item + '.svg'"
-          alt=""
-        />
+<div class="container" #container>
+  <div [@slideIn]="slideIn" class="wrapper">
+    <div class="top-bar">
+      <div class="info">
+        <h4>{{ title }}</h4>
+        <div class="stack">
+          <img
+            *ngFor="let item of stack"
+            [src]="'assets/icons/' + item + '.svg'"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <app-button
+          type="portfolio"
+          text="{{ 'PORTFOLIO.GITHUB' | translate }}"
+          class="button"
+        ></app-button>
+        <app-button
+          type="portfolio-secondary"
+          text="{{ 'PORTFOLIO.DEMO' | translate }}"
+          class="button"
+        ></app-button>
       </div>
     </div>
-    <div class="buttons">
-      <app-button
-        type="portfolio"
-        text="{{ 'PORTFOLIO.GITHUB' | translate }}"
-        class="button"
-      ></app-button>
-      <app-button
-        type="portfolio-secondary"
-        text="{{ 'PORTFOLIO.DEMO' | translate }}"
-        class="button"
-      ></app-button>
-    </div>
-  </div>
 
-  <div class="image">
-    <div class="description">
-      <p>{{ description }}</p>
+    <div class="image">
+      <div class="description">
+        <p>{{ description }}</p>
+      </div>
+      <img [src]="'assets/' + videoFileName" alt="" />
     </div>
-    <img [src]="'assets/' + videoFileName" alt="" />
   </div>
 </div>

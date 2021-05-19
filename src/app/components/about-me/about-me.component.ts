@@ -1,10 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
 import { Skill } from './skill/skill.class';
+import { boxAnimation, boxAnimationTrigger } from './about-me.animations';
 
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss'],
+  animations: [boxAnimation, boxAnimationTrigger],
 })
 export class AboutMeComponent implements OnInit {
   public frontendSkills: Skill[] = [
@@ -31,7 +39,21 @@ export class AboutMeComponent implements OnInit {
     new Skill('idea', 'Intelij Idea'),
   ];
 
+  public boxAnimation: string = 'hide';
+
+  @ViewChild('mySkillHeader') mySkillHeader: ElementRef;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    let elementOffset: number =
+      this.mySkillHeader.nativeElement.getBoundingClientRect().top;
+    let viewHeight: number = window.innerHeight;
+    if (elementOffset <= viewHeight * 0.8 && this.boxAnimation === 'hide') {
+      this.boxAnimation = 'visible';
+    }
+  }
 }

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="top-bar">
+  <div [@slideFromTopIconAnimation]="slideIn" class="top-bar">
     <div class="left-side">
       <div class="language-switcher">
         <div class="background left" shadow #switcherBackground></div>
@@ -44,12 +44,29 @@
       <p>{{ "HEADER.LOGO-2" | translate }}</p>
     </div>
     <app-button
+      [@popUp]="popUp"
       class="button"
       [text]="'PORTFOLIO.PORTFOLIO' | translate"
       type="header"
     ></app-button>
-    <img src="assets/icons/shovel.svg" alt="" class="shovel" />
-    <img src="assets/icons/grass.svg" alt="" class="grass" shadow />
-    <img src="assets/icons/desk.svg" alt="" class="desk" />
+    <img
+      [@slideFromBottomIconAnimation]="slideIn"
+      src="assets/icons/shovel.svg"
+      alt=""
+      class="shovel"
+    />
+    <img
+      [@slideFromBottomIconAnimation]="slideIn"
+      src="assets/icons/grass.svg"
+      alt=""
+      class="grass"
+      shadow
+    />
+    <img
+      [@slideFromBottomIconAnimation]="slideIn"
+      src="assets/icons/desk.svg"
+      alt=""
+      class="desk"
+    />
   </div>
 </div>

@@ -1,9 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
+import { slideInAnimation } from './application.animations';
 
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
   styleUrls: ['./application.component.scss'],
+  animations: [slideInAnimation],
 })
 export class ApplicationComponent implements OnInit {
   @Input() title: string;
@@ -11,7 +20,21 @@ export class ApplicationComponent implements OnInit {
   @Input() videoFileName: string;
   @Input() description: string;
 
+  @ViewChild('container') private container: ElementRef;
+
+  public slideIn: string = 'hide';
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    let elementOffset: number =
+      this.container.nativeElement.getBoundingClientRect().top;
+    let viewHeight: number = window.innerHeight;
+    if (elementOffset <= viewHeight * 0.8 && this.slideIn === 'hide') {
+      this.slideIn = 'visible';
+    }
+  }
 }
