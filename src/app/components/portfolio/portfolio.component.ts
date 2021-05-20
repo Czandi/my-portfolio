@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
   public selectedPortfolio: string = 'applications';
+  public animation: boolean = true;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   changePortfolio(portfolio: string) {
+    this.animation = false;
     if (portfolio !== this.selectedPortfolio) {
       this.selectedPortfolio = portfolio;
     }

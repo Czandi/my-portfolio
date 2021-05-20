@@ -19,14 +19,21 @@ export class ApplicationComponent implements OnInit {
   @Input() stack: string[];
   @Input() videoFileName: string;
   @Input() description: string;
+  @Input() animation: boolean = true;
 
   @ViewChild('container') private container: ElementRef;
 
-  public slideIn: string = 'hide';
+  public slideIn: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.animation) {
+      this.slideIn = 'hide';
+    } else {
+      this.slideIn = 'visible';
+    }
+  }
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {

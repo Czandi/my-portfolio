@@ -1,0 +1,23 @@
+<div class="container" #container>
+  <div class="wrapper">
+    <div class="top-bar">
+      <div class="info">
+        <h4>{{ title }}</h4>
+      </div>
+      <div class="buttons">
+        <app-button
+          type="portfolio"
+          text="{{ 'PORTFOLIO.SEE' | translate }}"
+          class="button"
+        ></app-button>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="description">
+        <p>{{ description }}</p>
+      </div>
+      <img [src]="'assets/' + fileName" alt="" />
+    </div>
+  </div>
+</div>

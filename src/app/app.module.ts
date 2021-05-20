@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarService } from './services/navbar.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GraphicComponent } from './components/portfolio/graphic/graphic.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -35,6 +36,7 @@ export function createTranslateLoader(http: HttpClient) {
     ContactComponent,
     FooterComponent,
     NavbarComponent,
+    GraphicComponent,
   ],
   imports: [
     BrowserModule,

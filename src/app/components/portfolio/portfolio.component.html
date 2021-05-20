@@ -29,12 +29,14 @@
     <app-application
       title="Labirynth"
       [stack]="['js', 'css', 'html']"
+      [animation]="animation"
       videoFileName="screens/screen.png"
       description="Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet"
       class="item"
     ></app-application>
     <app-application
       title="Labirynth"
+      [animation]="animation"
       [stack]="['js', 'css', 'html']"
       videoFileName="screens/screen.png"
       description="Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet"
@@ -42,6 +44,7 @@
     ></app-application>
     <app-application
       title="Labirynth"
+      [animation]="animation"
       [stack]="['js', 'css', 'html']"
       videoFileName="screens/screen.png"
       description="Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet"
@@ -49,6 +52,7 @@
     ></app-application>
     <app-application
       title="Labirynth"
+      [animation]="animation"
       [stack]="['js', 'css', 'html']"
       videoFileName="screens/screen.png"
       description="Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet"
@@ -56,6 +60,7 @@
     ></app-application>
     <app-application
       title="Labirynth"
+      [animation]="animation"
       [stack]="['js', 'css', 'html']"
       videoFileName="screens/screen.png"
       description="Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet"
@@ -63,6 +68,7 @@
     ></app-application>
     <app-application
       title="Labirynth"
+      [animation]="animation"
       [stack]="['js', 'css', 'html']"
       videoFileName="screens/screen.png"
       description="Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet"
@@ -70,5 +76,42 @@
     ></app-application>
   </div>
 
-  <div *ngIf="selectedPortfolio === 'graphics'" class="graphics"></div>
+  <div *ngIf="selectedPortfolio === 'graphics'" class="graphics">
+    <app-graphic
+      title="Ulotka informacyjna"
+      [animation]="animation"
+      fileName="screens/ulotka-informacyjna.png"
+      class="item"
+    ></app-graphic>
+    <app-graphic
+      title="Ulotka informacyjna"
+      [animation]="animation"
+      fileName="screens/ulotka-informacyjna.png"
+      class="item"
+    ></app-graphic>
+    <app-graphic
+      [animation]="animation"
+      title="Ulotka informacyjna"
+      fileName="screens/ulotka-informacyjna.png"
+      class="item"
+    ></app-graphic>
+    <app-graphic
+      title="Ulotka informacyjna"
+      [animation]="animation"
+      fileName="screens/ulotka-informacyjna.png"
+      class="item"
+    ></app-graphic>
+    <app-graphic
+      [animation]="animation"
+      title="Ulotka informacyjna"
+      fileName="screens/ulotka-informacyjna.png"
+      class="item"
+    ></app-graphic>
+    <app-graphic
+      [animation]="animation"
+      title="Ulotka informacyjna"
+      fileName="screens/ulotka-informacyjna.png"
+      class="item"
+    ></app-graphic>
+  </div>
 </div>
