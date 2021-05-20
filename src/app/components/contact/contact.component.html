@@ -7,21 +7,23 @@
       <h2>{{ "CONTACT.CONTACT" | translate }}</h2>
       <h3>{{ "CONTACT.CONTACT_WITH_ME" | translate }}</h3>
     </div>
-    <form action="">
+    <form [formGroup]="messageForm" action="">
       <div class="email">
         <label for="email">{{ "CONTACT.EMAIL" | translate }}</label>
         <input
           id="email"
           type="text"
+          formControlName="email"
           [placeholder]="'CONTACT.EMAIL' | translate"
         />
       </div>
-      <div class="subject">
-        <label for="subject"> {{ "CONTACT.SUBJECT" | translate }} </label>
+      <div class="name">
+        <label for="name"> {{ "CONTACT.NAME" | translate }} </label>
         <input
-          id="subject"
+          id="name"
           type="text"
-          [placeholder]="'CONTACT.SUBJECT' | translate"
+          formControlName="name"
+          [placeholder]="'CONTACT.NAME' | translate"
         />
       </div>
       <div class="body">
@@ -31,10 +33,15 @@
           id="body"
           cols="30"
           rows="10"
+          formControlName="message"
           [placeholder]="'CONTACT.BODY' | translate"
         ></textarea>
       </div>
-      <app-button type="basic" [text]="'CONTACT.SEND' | translate"></app-button>
+      <app-button
+        (click)="sendEmail()"
+        type="basic"
+        [text]="'CONTACT.SEND' | translate"
+      ></app-button>
     </form>
   </div>
 </div>

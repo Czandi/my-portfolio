@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="hamburger-wrapper">
+<div class="container" #container>
+  <div class="hamburger-wrapper" #hamburgerWrapper>
     <div
       (click)="toggleNavbar()"
       [ngClass]="showNavbar ? 'expanded' : ''"

@@ -5,6 +5,7 @@ import {
   ElementRef,
   HostListener,
   OnDestroy,
+  AfterViewInit,
 } from '@angular/core';
 import { Skill } from './skill/skill.class';
 import { boxAnimation, boxAnimationTrigger } from './about-me.animations';
@@ -17,7 +18,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./about-me.component.scss'],
   animations: [boxAnimation, boxAnimationTrigger],
 })
-export class AboutMeComponent implements OnInit, OnDestroy {
+export class AboutMeComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('container') container: ElementRef;
+  @ViewChild('hamburgerWrapper') hamburgerWrapper: ElementRef;
+
   public frontendSkills: Skill[] = [
     new Skill('html', 'HTML5'),
     new Skill('angular', 'Angular'),
@@ -46,6 +50,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   public boxAnimation: string = 'hide';
 
   private navbarServiceSub: Subscription;
+  private previousHeight: number = 0;
 
   @ViewChild('mySkillHeader') mySkillHeader: ElementRef;
 
@@ -59,6 +64,12 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.onResize();
+    }, 500);
+  }
+
   ngOnDestroy(): void {
     this.navbarServiceSub.unsubscribe();
   }
@@ -70,6 +81,21 @@ export class AboutMeComponent implements OnInit, OnDestroy {
     let viewHeight: number = window.innerHeight;
     if (elementOffset <= viewHeight * 0.8 && this.boxAnimation === 'hide') {
       this.boxAnimation = 'visible';
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    let containerHeight = this.container.nativeElement.clientHeight;
+    console.log(containerHeight);
+    if (this.previousHeight !== containerHeight) {
+      console.log(containerHeight);
+
+      this.previousHeight = containerHeight;
+      this.hamburgerWrapper.nativeElement.setAttribute(
+        'style',
+        'height: ' + containerHeight + 'px'
+      );
     }
   }
 

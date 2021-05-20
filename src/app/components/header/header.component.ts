@@ -5,6 +5,7 @@ import {
   ViewChild,
   AfterViewInit,
   OnDestroy,
+  HostListener,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { popUpAnimation } from './header.animations';
@@ -32,8 +33,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   private letterIndex: number = 0;
   private navbarServiceSub: Subscription;
 
-  public slideIn: string = 'hide';
-  public popUp: string = 'hide';
+  public slideIn: string = 'visible';
+  public popUp: string = 'visible';
   public showNavbar: boolean = false;
 
   constructor(
@@ -66,6 +67,9 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => {
       this.typing();
     }, 200);
+    setTimeout(() => {
+      this.headerLineText.nativeElement.setAttribute('style', 'z-index: 4');
+    }, 1500);
   }
 
   ngOnDestroy(): void {

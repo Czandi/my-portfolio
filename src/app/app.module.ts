@@ -17,6 +17,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarService } from './services/navbar.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -46,6 +47,8 @@ export function createTranslateLoader(http: HttpClient) {
       },
     }),
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [NavbarService],
   bootstrap: [AppComponent],
