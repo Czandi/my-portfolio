@@ -7,6 +7,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { slideInAnimation } from './application.animations';
+import { Application } from './application.class';
 
 @Component({
   selector: 'app-application',
@@ -15,10 +16,7 @@ import { slideInAnimation } from './application.animations';
   animations: [slideInAnimation],
 })
 export class ApplicationComponent implements OnInit {
-  @Input() title: string;
-  @Input() stack: string[];
-  @Input() videoFileName: string;
-  @Input() description: string;
+  @Input() app: Application;
   @Input() animation: boolean = true;
 
   @ViewChild('container') private container: ElementRef;

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="top-bar">
       <div class="info">
-        <h4>{{ title }}</h4>
+        <h4>{{ graphic.title }}</h4>
       </div>
       <div class="buttons">
         <app-button
@@ -15,9 +15,9 @@
 
     <div class="image">
       <div class="description">
-        <p>{{ description }}</p>
+        <p>{{ graphic.description }}</p>
       </div>
-      <img [src]="'assets/' + fileName" alt="" />
+      <img [src]="'assets/screens/' + graphic.photoFileName" alt="" />
     </div>
   </div>
 </div>

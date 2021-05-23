@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     }, 200);
     setTimeout(() => {
       this.headerLineText.nativeElement.setAttribute('style', 'z-index: 4');
-    }, 1500);
+    }, 2500);
   }
 
   ngOnDestroy(): void {

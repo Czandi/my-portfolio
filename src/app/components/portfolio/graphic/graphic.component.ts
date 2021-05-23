@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Graphic } from './graphic.class';
 
 @Component({
   selector: 'app-graphic',
@@ -6,9 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./graphic.component.scss'],
 })
 export class GraphicComponent implements OnInit {
-  @Input() title: string;
-  @Input() fileName: string;
-  @Input() description: string;
+  @Input() graphic: Graphic;
 
   constructor() {}
 
