@@ -1,8 +1,5 @@
 <div class="container">
-  <img
-    [src]="'assets/icons/' + skill.fileName + '.svg'"
-    alt=""
-    class="icon ts"
-  />
-  <p>{{ skill.description }}</p>
+  <p [ngClass]="skill.fileName">{{ skill.description }}</p>
+
+  <img [src]="'assets/icons/' + skill.fileName + '.svg'" alt="" class="icon" />
 </div>

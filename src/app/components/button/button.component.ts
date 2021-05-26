@@ -9,7 +9,7 @@ import {
   expansionTriggerAnimation,
   bottomButtonSwitch,
   topButtonSwitch,
-} from './animations';
+} from './button.animations';
 
 @Component({
   selector: 'app-button',
@@ -18,7 +18,8 @@ import {
   animations: [expansionTriggerAnimation, bottomButtonSwitch, topButtonSwitch],
 })
 export class ButtonComponent implements OnInit, OnChanges {
-  @Input() text: string;
+  @Input() text1: string;
+  @Input() text2: string;
   @Input() type: string = 'green';
   public onButton: boolean;
   public status: string = 'off';

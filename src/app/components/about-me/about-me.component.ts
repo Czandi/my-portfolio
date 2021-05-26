@@ -11,6 +11,7 @@ import { Skill } from './skill/skill.class';
 import { boxAnimation, boxAnimationTrigger } from './about-me.animations';
 import { NavbarService } from '../../services/navbar.service';
 import { Subscription } from 'rxjs';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-me',
@@ -54,12 +55,21 @@ export class AboutMeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('mySkillHeader') mySkillHeader: ElementRef;
 
-  constructor(private navbarService: NavbarService) {
+  constructor(private navbarService: NavbarService, router: Router) {
     this.navbarServiceSub = this.navbarService
       .onShowNavbar()
       .subscribe((showNavbar) => {
         this.showNavbar = showNavbar;
       });
+
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url === '/about-me') {
+          let el: HTMLElement = this.container.nativeElement;
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
   }
 
   ngOnInit(): void {}
@@ -97,10 +107,5 @@ export class AboutMeComponent implements OnInit, OnDestroy, AfterViewInit {
         'height: ' + containerHeight + 'px'
       );
     }
-  }
-
-  toggleNavbar(): void {
-    this.showNavbar = !this.showNavbar;
-    this.navbarService.setShowNavbar(this.showNavbar);
   }
 }

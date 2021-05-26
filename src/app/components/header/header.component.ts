@@ -120,9 +120,4 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
       }, 40);
     }
   }
-
-  toggleNavbar() {
-    this.showNavbar = !this.showNavbar;
-    this.navbarService.setShowNavbar(this.showNavbar);
-  }
 }

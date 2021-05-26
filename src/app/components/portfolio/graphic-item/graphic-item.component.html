@@ -1,0 +1,25 @@
+<div class="container" #container>
+  <div class="wrapper">
+    <div class="top-bar">
+      <div class="info">
+        <h4>{{ graphic.title }}</h4>
+      </div>
+      <div class="buttons">
+        <app-button
+          type="portfolio"
+          text1="{{ 'PORTFOLIO.SEE' | translate }}"
+          text2="{{ 'PORTFOLIO.SEE' | translate }}"
+          class="button"
+          (click)="goToLink(graphic.link)"
+        ></app-button>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="description">
+        <p>{{ graphic.description }}</p>
+      </div>
+      <img [src]="'assets/screens/' + graphic.photoFileName" alt="" />
+    </div>
+  </div>
+</div>

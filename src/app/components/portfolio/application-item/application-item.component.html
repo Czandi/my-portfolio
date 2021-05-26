@@ -1,0 +1,40 @@
+<div class="container" #container>
+  <div [@slideIn]="slideIn" class="wrapper">
+    <div class="top-bar">
+      <div class="info">
+        <h4>{{ app.title }}</h4>
+        <div class="stack">
+          <img
+            *ngFor="let item of app.stack"
+            [src]="'assets/icons/' + item + '.svg'"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <app-button
+          *ngIf="app.demoLink !== ''"
+          type="portfolio-secondary"
+          text1="{{ 'PORTFOLIO.DEMO' | translate }}"
+          text2="{{ 'OTHER.LINK' | translate }}"
+          class="button"
+          (click)="goToLink(app.demoLink)"
+        ></app-button>
+        <app-button
+          type="portfolio"
+          text1="{{ 'PORTFOLIO.GITHUB' | translate }}"
+          text2="{{ 'OTHER.LINK' | translate }}"
+          class="button"
+          (click)="goToLink(app.githubLink)"
+        ></app-button>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="description">
+        <p>{{ app.description }}</p>
+      </div>
+      <img [src]="'assets/screens/' + app.photoFileName" alt="" />
+    </div>
+  </div>
+</div>

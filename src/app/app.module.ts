@@ -12,13 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillComponent } from './components/about-me/skill/skill.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ApplicationComponent } from './components/portfolio/application/application.component';
+import { ApplicationItemComponent } from './components/portfolio/application-item/application-item.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarService } from './services/navbar.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GraphicComponent } from './components/portfolio/graphic/graphic.component';
+import { GraphicItemComponent } from './components/portfolio/graphic-item/graphic-item.component';
+import { RouterModule, Routes } from '@angular/router';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -32,15 +33,21 @@ export function createTranslateLoader(http: HttpClient) {
     AboutMeComponent,
     SkillComponent,
     PortfolioComponent,
-    ApplicationComponent,
+    ApplicationItemComponent,
     ContactComponent,
     FooterComponent,
     NavbarComponent,
-    GraphicComponent,
+    GraphicItemComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: '**',
+        component: AppComponent,
+      },
+    ]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

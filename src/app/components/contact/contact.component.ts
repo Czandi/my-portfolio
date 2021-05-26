@@ -1,6 +1,7 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NavigationStart, Router } from '@angular/router';
 import { endpoint } from '../../mail-endpoint';
 
 @Component({
@@ -9,9 +10,20 @@ import { endpoint } from '../../mail-endpoint';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
+  @ViewChild('container') container: ElementRef;
+
   public messageForm: FormGroup;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, router: Router) {
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url === '/contact') {
+          let el = this.container.nativeElement;
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.initFormGroup();

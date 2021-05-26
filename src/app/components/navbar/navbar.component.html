@@ -1,6 +1,15 @@
+<div
+  (click)="toggleNavbar()"
+  [ngClass]="showNavbar ? 'expanded' : ''"
+  class="hamburger {{ style }}"
+>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 <div [class]="style" [ngClass]="showNavbar ? 'expanded' : ''" class="container">
-  <a href="#">O mnie</a>
-  <a href="#">Portfolio</a>
-  <a href="#">Kontakt</a>
-  <a href="#">Resume (pdf)</a>
+  <a (click)="goTo('about-me')">O mnie</a>
+  <a (click)="goTo('portfolio')">Portfolio</a>
+  <a (click)="goTo('contact')">Kontakt</a>
+  <a (click)="goTo('resume')">Resume (pdf)</a>
 </div>

@@ -13,17 +13,6 @@
     height: 900px;
     position: absolute;
     clip: rect(0, auto, auto, 0);
-
-    .hamburger {
-      .line {
-        background-color: $light;
-      }
-      &.expanded {
-        .line {
-          background-color: $primary-green !important;
-        }
-      }
-    }
   }
 
   .wrapper {
@@ -258,6 +247,16 @@
 @include media("<=1200px") {
   .content {
     margin-top: 10px;
+    padding-bottom: 370px !important;
+    .box-wrapper {
+      .mini-box-wrapper {
+        height: 300px !important;
+      }
+
+      .box.mini {
+        height: 300px !important;
+      }
+    }
   }
 }
 
@@ -277,7 +276,7 @@
 
 @include media("<=678px") {
   .content {
-    padding-bottom: 0 !important;
+    padding-bottom: 10px !important;
     .box-wrapper {
       margin-top: 30px;
       .box {
@@ -294,7 +293,7 @@
         .person-jumping {
           left: 50%;
           transform: translateX(-50%) scale(0.8);
-          bottom: -95% !important;
+          bottom: -70% !important;
           top: auto !important;
         }
       }
@@ -302,6 +301,16 @@
 
     .skills {
       height: 1600px !important;
+    }
+  }
+}
+
+@include media("<=phone") {
+  .content {
+    .box-wrapper {
+      .box {
+        margin: 20px 0 !important;
+      }
     }
   }
 }

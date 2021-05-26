@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NavbarService } from '../../services/navbar.service';
 
@@ -7,14 +8,14 @@ import { NavbarService } from '../../services/navbar.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   @Input() style: string;
 
   private navbarServiceSub: Subscription;
 
   public showNavbar: boolean = false;
 
-  constructor(private navbarService: NavbarService) {}
+  constructor(private navbarService: NavbarService, private router: Router) {}
 
   ngOnInit(): void {
     this.navbarServiceSub = this.navbarService
@@ -22,5 +23,22 @@ export class NavbarComponent implements OnInit {
       .subscribe((showNavbar) => {
         this.showNavbar = showNavbar;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.navbarServiceSub.unsubscribe();
+  }
+
+  ngAfterViewInit(): void {
+    console.log(document.getElementById('headerSection'));
+  }
+
+  toggleNavbar() {
+    this.showNavbar = !this.showNavbar;
+    this.navbarService.setShowNavbar(this.showNavbar);
+  }
+
+  goTo(element: string) {
+    this.router.navigate(['/' + element]);
   }
 }

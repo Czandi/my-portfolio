@@ -4,6 +4,7 @@
 .container {
   color: white;
   text-align: center;
+  margin-top: -70px;
 
   .shadow {
     filter: drop-shadow(0px -5px 10px rgba(0, 0, 0, 0.25));
@@ -21,7 +22,7 @@
 
   .wrapper {
     background-color: $secondary-green;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     margin-top: -80px;
 
     .section-header h2 {
@@ -38,10 +39,14 @@
       }
 
       .body {
-        margin: 5vh auto;
+        margin: 3vh auto;
         width: 60vw;
         text-align: left;
       }
+    }
+
+    .button {
+      margin: 0 auto;
     }
   }
 }
@@ -49,24 +54,41 @@
 @include media("<=tablet") {
   form {
     .email,
-    .subject {
+    .name,
+    .body {
       display: block !important;
       margin: 2.5vh auto !important;
-      width: 50vw !important;
+      width: 60vw !important;
     }
 
     .body {
       margin: 2.5vh auto !important;
     }
   }
+
+  .wrapper {
+    margin-top: -60px !important;
+  }
+
+  .edge {
+    height: 150px !important;
+    clip-path: polygon(0 0%, 100% 40%, 100% 100%, 0 100%) !important;
+  }
 }
 
 @include media("<=514px") {
   form {
     .email,
-    .subject,
+    .name,
     .body {
       width: 80vw !important;
     }
+  }
+}
+
+@include media("<=phone") {
+  .edge {
+    height: 125px !important;
+    clip-path: polygon(0 0%, 100% 25%, 100% 100%, 0 100%) !important;
   }
 }

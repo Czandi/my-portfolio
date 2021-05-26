@@ -1,7 +1,64 @@
 {
   "HEADER": {
-    "LOGO-1": "Dupa dupa dupa dupa",
+    "LOGO-1": "Junior Fullstack Developer & Designer",
     "LOGO-2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
-  "PORTFOLIO": "Portfolio"
+  "ABOUT_ME": {
+    "HELLO": "Cześć!",
+    "TEXT": "Jestem absolwentem Informatyki Uniwersytetu Śląskiego w Katowicach. Moim celem jest znalezienie pierwszej pracy, aby zyskać praktyczne doświadczenia w programowaniu i rozwijać się w kierunku technologii webowych.  Ucząc się, koncetruję swoją uwagę zarówno na technologiach front-endowych, jak i back-endowych. Jestem osobą, która chętnie podejmuje się nowych wyzwań oraz stara się pracować nad tym, aby cały czas kroczyć do przodu.",
+    "MY_SKILLS": "Moje umiejętności",
+    "BACKEND": "Backend",
+    "FRONTEND": "Frontend",
+    "OTHER": "Inne"
+  },
+  "PORTFOLIO": {
+    "PORTFOLIO": "Portfolio",
+    "MY_PROJECTS": "Moje projekty",
+    "APPLICATIONS": "Aplikacje",
+    "GRAPHICS": "Grafika",
+    "GITHUB": "Github",
+    "SEE": "Zobacz",
+    "DEMO": "Demo"
+  },
+  "CONTACT": {
+    "CONTACT": "Kontakt",
+    "CONTACT_WITH_ME": "Skontaktuj się ze mną",
+    "EMAIL": "Email",
+    "NAME": "Imię",
+    "BODY": "Treść",
+    "SEND": "Wyślij"
+  },
+  "FOOTER": {},
+  "PROJECTS": {
+    "TITLES": {
+      "LABIRYNTH": "Labirynth",
+      "ANGELIKA_PORTFOLIO": "Portfolio Angeliki",
+      "LESSON_JOURNAL": "Dziennik lekcyjny",
+      "INV_SYSTEM": "INV System",
+      "MARIOWOZ": "Mariowoz",
+      "SHOPUP": "ShopUp",
+      "MY_PORTFOLIO": "Moje portfolio",
+      "DOTGAMES_LAYOUT": "Szata graficzna DotGames",
+      "FUDLI_LEAFLET": "Ulotka Fudli",
+      "INVESTMENT_TEASER": "Teaser inwestycyjny Fudli",
+      "RESUME": "Moje cv",
+      "ZZIELENIAKA_LEAFLET": "Ulotka ZZieleniaka",
+      "ZZIELENIAKA_POSTER": "Plakat ZZieleniaka"
+    },
+    "DESCRIPTIONS": {
+      "LABIRYNTH": "Labirynth",
+      "ANGELIKA_PORTFOLIO": "Portfolio Angeliki",
+      "LESSON_JOURNAL": "Dziennik lekcyjny",
+      "INV_SYSTEM": "INV System",
+      "MARIOWOZ": "Mariowoz",
+      "SHOPUP": "ShopUp",
+      "MY_PORTFOLIO": "Moje portfolio",
+      "DOTGAMES_LAYOUT": "Szata graficzna DotGames",
+      "FUDLI_LEAFLET": "Ulotka Fudli",
+      "INVESTMENT_TEASER": "Teaser inwestycyjny Fudli",
+      "RESUME": "Moje cv",
+      "ZZIELENIAKA_LEAFLET": "Ulotka ZZieleniaka",
+      "ZZIELENIAKA_POSTER": "Plakat ZZieleniaka"
+    }
+  }
 }

@@ -1,15 +1,8 @@
-<div
-  (mouseenter)="toggle()"
-  (mouseleave)="toggle()"
-  [@expansionTrigger]="status"
-  class="container"
->
-  <div [ngClass]="type" class="buttons">
-    <div [@topButtonSwitch]="status" [ngClass]="type" class="button">
-      <p>{{ text }}</p>
-    </div>
-    <div [@bottomButtonSwitch]="status" [ngClass]="type" class="under-button">
-      <p *ngIf="type === 'header'">{{ text }}</p>
-    </div>
+<div class="container" [ngClass]="type">
+  <div class="secondary">
+    <p>{{ text2 }}</p>
+  </div>
+  <div class="primary">
+    <p>{{ text1 }}</p>
   </div>
 </div>

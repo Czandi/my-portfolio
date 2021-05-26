@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" #scrollTo>
   <div class="wrapper">
     <div class="section-header">
       <h2>{{ "PORTFOLIO.PORTFOLIO" | translate }}</h2>
@@ -7,14 +7,24 @@
 
     <div class="button-wrapper">
       <app-button
-        [type]="selectedPortfolio === 'applications' ? 'disable' : 'basic'"
-        [text]="'PORTFOLIO.APPLICATIONS' | translate"
+        [type]="
+          selectedPortfolio === 'applications'
+            ? 'basic left disable'
+            : 'basic left'
+        "
+        [text1]="'PORTFOLIO.APPLICATIONS' | translate"
+        [text2]="'OTHER.SEE' | translate"
         class="button apps"
         (click)="changePortfolio('applications')"
       ></app-button>
       <app-button
-        [type]="selectedPortfolio === 'graphics' ? 'disable' : 'basic'"
-        [text]="'PORTFOLIO.GRAPHICS' | translate"
+        [type]="
+          selectedPortfolio === 'graphics'
+            ? 'basic right disable'
+            : 'basic right'
+        "
+        [text1]="'PORTFOLIO.GRAPHICS' | translate"
+        [text2]="'OTHER.SEE' | translate"
         class="button graphs"
         (click)="changePortfolio('graphics')"
       ></app-button>
@@ -25,21 +35,32 @@
     <div class="edge"></div>
   </div>
 
-  <div *ngIf="selectedPortfolio === 'applications'" class="applications">
-    <app-application
-      *ngFor="let app of applications"
-      [app]="app"
-      [animation]="animation"
-      class="item"
-    ></app-application>
-  </div>
+  <div
+    class="portfolio-wrapper"
+    [ngClass]="selectedPortfolio === 'applications' ? 'apps' : ''"
+  >
+    <div>
+      <div class="applications-wrapper">
+        <div *ngIf="showApps" class="applications">
+          <app-application
+            *ngFor="let app of applications"
+            [app]="app"
+            [animation]="animation"
+            class="item"
+          ></app-application>
+        </div>
+      </div>
 
-  <div *ngIf="selectedPortfolio === 'graphics'" class="graphics">
-    <app-graphic
-      *ngFor="let graphic of graphics"
-      [graphic]="graphic"
-      [animation]="animation"
-      class="item"
-    ></app-graphic>
+      <div *ngIf="showGraphics" class="graphics-wrapper">
+        <div class="graphics">
+          <app-graphic
+            *ngFor="let graphic of graphics"
+            [graphic]="graphic"
+            [animation]="animation"
+            class="item"
+          ></app-graphic>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

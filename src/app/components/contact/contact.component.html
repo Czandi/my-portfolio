@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" #container>
   <div class="shadow">
     <div class="edge"></div>
   </div>
@@ -9,7 +9,7 @@
     </div>
     <form [formGroup]="messageForm" action="">
       <div class="email">
-        <label for="email">{{ "CONTACT.EMAIL" | translate }}</label>
+        <!-- <label for=l"email">{{ "CONTACT.EMAIL" | translate }}</label> -->
         <input
           id="email"
           type="text"
@@ -18,7 +18,7 @@
         />
       </div>
       <div class="name">
-        <label for="name"> {{ "CONTACT.NAME" | translate }} </label>
+        <!-- <label for="name"> {{ "CONTACT.NAME" | translate }} </label> -->
         <input
           id="name"
           type="text"
@@ -27,7 +27,7 @@
         />
       </div>
       <div class="body">
-        <label for="body">{{ "CONTACT.BODY" | translate }}</label>
+        <!-- <label for="body">{{ "CONTACT.BODY" | translate }}</label> -->
         <textarea
           name=""
           id="body"
@@ -40,7 +40,9 @@
       <app-button
         (click)="sendEmail()"
         type="basic"
-        [text]="'CONTACT.SEND' | translate"
+        [text1]="'CONTACT.SEND' | translate"
+        [text2]="'CONTACT.SEND' | translate"
+        class="button"
       ></app-button>
     </form>
   </div>

@@ -2,7 +2,7 @@
   <div [@slideFromTopIconAnimation]="slideIn" class="top-bar">
     <div class="left-side">
       <div class="language-switcher">
-        <div class="background left" shadow #switcherBackground></div>
+        <div class="background left" #switcherBackground></div>
         <div
           class="pl active"
           (mouseover)="increaseBackground('pl')"
@@ -23,35 +23,39 @@
         </div>
       </div>
       <div class="social-media">
-        <img src="assets/icons/facebook.svg" alt="" class="facebook" />
-        <img src="assets/icons/mail.svg" alt="" class="mail" />
-        <img src="assets/icons/github.svg" alt="" class="github" />
-        <img src="assets/icons/linked-in.svg" alt="" class="linked-in" />
+        <div class="icon facebook">
+          <img src="assets/icons/facebook-green.svg" alt="" class="green" />
+          <img src="assets/icons/facebook.svg" alt="" class="black" />
+        </div>
+        <div class="icon mail">
+          <img src="assets/icons/mail-green.svg" alt="" class="green" />
+          <img src="assets/icons/mail.svg" alt="" class="black" />
+        </div>
+        <div class="icon github">
+          <img src="assets/icons/github-green.svg" alt="" class="green" />
+          <img src="assets/icons/github.svg" alt="" class="black" />
+        </div>
+        <div class="icon linked-in">
+          <img src="assets/icons/linked-in-green.svg" alt="" class="green" />
+          <img src="assets/icons/linked-in.svg" alt="" class="black" />
+        </div>
       </div>
     </div>
     <div class="hamburger-wrapper">
-      <div
-        (click)="toggleNavbar()"
-        [ngClass]="showNavbar ? 'expanded' : ''"
-        class="hamburger"
-      >
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
       <app-navbar [style]="'green'" class="navbar"></app-navbar>
     </div>
   </div>
   <div class="content">
     <div class="logo">
-      <h1 shadow>Dominik</h1>
+      <h1>Dominik</h1>
       <h2 #headerLineText></h2>
       <p>{{ "HEADER.LOGO-2" | translate }}</p>
     </div>
     <app-button
       [@popUp]="popUp"
       class="button"
-      [text]="'PORTFOLIO.PORTFOLIO' | translate"
+      [text1]="'PORTFOLIO.PORTFOLIO' | translate"
+      [text2]="'OTHER.SEE' | translate"
       type="header"
     ></app-button>
     <img
@@ -65,7 +69,6 @@
       src="assets/icons/grass.svg"
       alt=""
       class="grass"
-      shadow
     />
     <img
       [@slideFromBottomIconAnimation]="slideIn"
