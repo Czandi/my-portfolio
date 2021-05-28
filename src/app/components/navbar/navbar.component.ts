@@ -29,9 +29,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.navbarServiceSub.unsubscribe();
   }
 
-  ngAfterViewInit(): void {
-    console.log(document.getElementById('headerSection'));
-  }
+  ngAfterViewInit(): void {}
 
   toggleNavbar() {
     this.showNavbar = !this.showNavbar;

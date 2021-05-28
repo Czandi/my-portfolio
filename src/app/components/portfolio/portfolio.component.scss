@@ -2,7 +2,7 @@
 @import "../../../assets/responsive.mixin.scss";
 
 .container {
-  margin-top: -1px;
+  margin-top: -2px;
   color: white;
   z-index: 0;
   position: relative;
@@ -84,6 +84,28 @@
       margin-right: 3vw;
       margin-bottom: 13vh;
     }
+  }
+}
+
+@include media(">big-desktop") {
+  .edge {
+    height: 400px !important;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%) !important;
+  }
+
+  .section-header {
+    padding-top: 30px !important;
+  }
+}
+
+@include media(">4k-desktop") {
+  .edge {
+    height: 550px !important;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%) !important;
+  }
+
+  .section-header {
+    padding-top: 55px !important;
   }
 }
 

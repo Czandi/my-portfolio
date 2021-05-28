@@ -72,7 +72,7 @@
         .eng {
           position: absolute;
           top: 50%;
-          font-size: 0.8em;
+          font-size: 0.8em !important;
           transition: color 0.3s ease;
 
           &.active {
@@ -202,7 +202,7 @@
   }
 }
 
-@include media(">=big-desktop") {
+@include media(">big-desktop") {
   .logo {
     width: 1400px !important;
   }
@@ -245,8 +245,80 @@
     width: 340px !important;
     margin-left: 20px;
 
-    img {
-      transform: translate(25%, -50%) scale(1.5) !important;
+    .icon {
+      img {
+        transform: translate(25%, -50%) scale(1.5) !important;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          &.black {
+            margin-top: -75px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(">4k-desktop") {
+  .logo {
+    width: 1900px !important;
+  }
+
+  .shovel {
+    transform: translateY(-40%) scale(2);
+    left: 14vw !important;
+  }
+
+  .grass {
+    @include blowAnimation(translateY(-50%) scale(2));
+    left: 25vw !important;
+  }
+
+  .desk {
+    transform: translateY(-49.5%) scale(2);
+    right: 14vw !important;
+  }
+
+  .top-bar {
+    height: 80px !important;
+  }
+
+  .language-switcher {
+    display: inline-block;
+    width: 200px !important;
+    height: 65px !important;
+
+    .background {
+      border-radius: 0 40px 40px 0 !important;
+      &.left {
+        border-radius: 40px 0 0 40px !important;
+      }
+    }
+  }
+
+  .social-media {
+    height: 80px !important;
+    width: 400px !important;
+    margin-left: 20px;
+
+    .icon {
+      img {
+        transform: translate(25%, -50%) scale(2) !important;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          &.black {
+            margin-top: -100px !important;
+          }
+        }
+      }
     }
   }
 }

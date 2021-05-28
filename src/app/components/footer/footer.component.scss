@@ -1,4 +1,5 @@
 @import "../../../assets/variables.scss";
+@import "../../../assets/responsive.mixin.scss";
 
 .container {
   background-color: $primary-green;
@@ -9,6 +10,12 @@
   justify-content: center;
 
   p {
-    font-size: 0.7em;
+    font-size: 0.7em !important;
+  }
+}
+
+@include media(">big-desktop") {
+  .container {
+    height: 160px !important;
   }
 }

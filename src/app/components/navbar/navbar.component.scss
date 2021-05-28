@@ -1,4 +1,5 @@
 @import "../../../assets/variables.scss";
+@import "../../../assets/responsive.mixin.scss";
 
 .container {
   padding: 100px 100px 20px 20px;
@@ -142,6 +143,42 @@
       &:nth-of-type(3) {
         transform: translateY(-260%) rotate(-45deg);
       }
+    }
+  }
+}
+
+@include media(">big-desktop") {
+  .container {
+    width: 420px !important;
+    height: 420px !important;
+    top: -460px !important;
+    right: -460px !important;
+  }
+
+  .hamburger {
+    width: 55px !important;
+    height: 30px !important;
+    top: 32.5px !important;
+    right: 30px !important;
+  }
+}
+
+@include media(">4k-desktop") {
+  .container {
+    width: 560px !important;
+    height: 560px !important;
+    top: -580px !important;
+    right: -580px !important;
+  }
+
+  .hamburger {
+    width: 70px !important;
+    height: 40px !important;
+    top: 32.5px !important;
+    right: 30px !important;
+
+    .line {
+      border-radius: 15px !important;
     }
   }
 }

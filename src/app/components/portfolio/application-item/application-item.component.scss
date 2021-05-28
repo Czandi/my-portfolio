@@ -86,20 +86,65 @@
   }
 }
 
+@include media(">big-desktop") {
+  .wrapper {
+    width: 700px !important;
+    height: 550px !important;
+  }
+
+  .top-bar {
+    height: 130px !important;
+  }
+
+  .stack {
+    img {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+}
+
+@include media(">4k-desktop") {
+  .wrapper {
+    width: 1000px !important;
+    height: 740px !important;
+  }
+
+  .top-bar {
+    height: 150px !important;
+  }
+
+  .stack {
+    img {
+      width: 54px !important;
+      height: 54px !important;
+    }
+  }
+
+  .image {
+    .description {
+      border-radius: 80px !important;
+    }
+
+    img {
+      border-radius: 80px !important;
+    }
+
+    &:hover {
+      img {
+        margin-top: 240px !important;
+      }
+    }
+  }
+}
+
 @include media("<=1300px") {
   .wrapper {
     width: 400px !important;
 
     .top-bar {
       .buttons {
-        // width: 260px !important;
         right: 5px !important;
-      }
-    }
-
-    .image {
-      .description {
-        // height: calc(100% - 140px);
       }
     }
   }

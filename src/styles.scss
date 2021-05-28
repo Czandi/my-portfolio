@@ -67,7 +67,7 @@ textarea {
   padding: 20px;
 }
 
-@include media(">=big-desktop") {
+@include media(">big-desktop") {
   * {
     font-size: 37px !important;
   }
@@ -80,9 +80,28 @@ textarea {
     font-size: 220px !important;
   }
 
+  input,
+  textarea {
+    padding: 7px 30px !important;
+  }
+
   .hamburger {
     width: 52px !important;
     height: 28px !important;
+  }
+}
+
+@include media(">4k-desktop") {
+  * {
+    font-size: 50px !important;
+  }
+
+  h2 {
+    font-size: 100px !important;
+  }
+
+  h1 {
+    font-size: 300px !important;
   }
 }
 

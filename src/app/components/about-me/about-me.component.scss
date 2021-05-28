@@ -175,6 +175,92 @@
   }
 }
 
+@include media(">big-desktop") {
+  .hello {
+    padding-left: 60px !important;
+  }
+
+  .icon {
+    transform: scale(1.5);
+  }
+
+  .tunnel {
+    height: 1500px !important;
+    width: 200px !important;
+  }
+
+  .box-wrapper {
+    height: 750px !important;
+    .box {
+      width: 465px !important;
+      height: 670px !important;
+      margin: 0 30px !important;
+
+      &.mini {
+        height: 340px !important;
+      }
+    }
+
+    .mini-box-wrapper {
+      width: 800px !important;
+
+      .person-jumping {
+        transform: scale(1.5);
+        top: 45% !important;
+      }
+
+      .person-walking {
+        transform: scale(1.5);
+        top: -26% !important;
+        left: 21% !important;
+      }
+    }
+  }
+}
+
+@include media(">4k-desktop") {
+  .hello {
+    padding-left: 50px !important;
+  }
+
+  .icon {
+    transform: scale(2);
+  }
+
+  .tunnel {
+    height: 1800px !important;
+    width: 200px !important;
+  }
+
+  .box-wrapper {
+    height: 1050px !important;
+    .box {
+      width: 665px !important;
+      height: 970px !important;
+      margin: 0 30px !important;
+
+      &.mini {
+        height: 500px !important;
+      }
+    }
+
+    .mini-box-wrapper {
+      width: 1050px !important;
+
+      .person-jumping {
+        transform: scale(2);
+        top: 30% !important;
+      }
+
+      .person-walking {
+        transform: scale(2);
+        top: -70% !important;
+        left: 25% !important;
+      }
+    }
+  }
+}
+
 @include media("<=1610px") {
   .box-wrapper {
     .mini-box-wrapper {

@@ -37,61 +37,67 @@ export class PortfolioComponent implements OnInit {
         'PROJECTS.TITLES.MARIOWOZ',
         'PROJECTS.TITLES.SHOPUP',
         'PROJECTS.TITLES.MY_PORTFOLIO',
+        'PROJECTS.DESCRIPTIONS.LABIRYNTH',
+        'PROJECTS.DESCRIPTIONS.ANGELIKA_PORTFOLIO',
+        'PROJECTS.DESCRIPTIONS.LESSON_JOURNAL',
+        'PROJECTS.DESCRIPTIONS.INV_SYSTEM',
+        'PROJECTS.DESCRIPTIONS.MARIOWOZ',
+        'PROJECTS.DESCRIPTIONS.SHOPUP',
+        'PROJECTS.DESCRIPTIONS.MY_PORTFOLIO',
       ])
       .subscribe((res) => {
-        let titles = res;
+        let data = res;
         this.applications = [
           new Application(
-            titles['PROJECTS.TITLES.ANGELIKA_PORTFOLIO'],
+            data['PROJECTS.TITLES.ANGELIKA_PORTFOLIO'],
             ['angular', 'sass'],
             'angelika-portfolio.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
+            data['PROJECTS.DESCRIPTIONS.ANGELIKA_PORTFOLIO'],
             'https://github.com/Czandi/angelika-portfolio',
             'tutajbedzielink'
           ),
           new Application(
-            titles['PROJECTS.TITLES.INV_SYSTEM'],
+            data['PROJECTS.TITLES.INV_SYSTEM'],
             ['spring', 'angular', 'mysql', 'electron', 'sass'],
             'inv-system.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
+            data['PROJECTS.DESCRIPTIONS.INV_SYSTEM'],
             'https://github.com/Czandi/inventory-system-app'
           ),
           new Application(
-            titles['PROJECTS.TITLES.LESSON_JOURNAL'],
+            data['PROJECTS.TITLES.LESSON_JOURNAL'],
             ['spring', 'angular', 'sass', 'mysql'],
             'lesson-journal.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
-            'https://github.com/Czandi/iami-project',
-            ''
+            data['PROJECTS.DESCRIPTIONS.LESSON_JOURNAL'],
+            'https://github.com/Czandi/iami-project'
           ),
           new Application(
-            titles['PROJECTS.TITLES.MARIOWOZ'],
+            data['PROJECTS.TITLES.MARIOWOZ'],
             ['angular', 'sass'],
             'mariowoz.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
+            data['PROJECTS.DESCRIPTIONS.MARIOWOZ'],
             'https://github.com/Czandi/mariowoz',
-            'tutajbedzielink'
+            'https://mariowoz.herokuapp.com/'
           ),
           new Application(
-            titles['PROJECTS.TITLES.LABIRYNTH'],
+            data['PROJECTS.TITLES.LABIRYNTH'],
             ['js', 'css', 'html'],
             'labirynth.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
+            data['PROJECTS.DESCRIPTIONS.LABIRYNTH'],
             'https://github.com/Czandi/labirynth',
             'https://labirynth-game.herokuapp.com'
           ),
           new Application(
-            titles['PROJECTS.TITLES.SHOPUP'],
+            data['PROJECTS.TITLES.SHOPUP'],
             ['android-studio', 'java'],
             'shopup.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
+            data['PROJECTS.DESCRIPTIONS.SHOPUP'],
             'https://github.com/Czandi/shopup'
           ),
           new Application(
-            titles['PROJECTS.TITLES.MY_PORTFOLIO'],
+            data['PROJECTS.TITLES.MY_PORTFOLIO'],
             ['angular', 'sass'],
             'my-portfolio.png',
-            'Phasellus consequat facilisis felis sed gravida. Mauris volutpat eros quis nunc aliquam commodo sit amet',
+            data['PROJECTS.DESCRIPTIONS.MY_PORTFOLIO'],
             'https://github.com/Czandi/my-portfolio'
           ),
         ];
@@ -105,6 +111,12 @@ export class PortfolioComponent implements OnInit {
         'PROJECTS.TITLES.RESUME',
         'PROJECTS.TITLES.ZZIELENIAKA_LEAFLET',
         'PROJECTS.TITLES.ZZIELENIAKA_POSTER',
+        'PROJECTS.DESCRIPTIONS.DOTGAMES_LAYOUT',
+        'PROJECTS.DESCRIPTIONS.FUDLI_LEAFLET',
+        'PROJECTS.DESCRIPTIONS.INVESTMENT_TEASER',
+        'PROJECTS.DESCRIPTIONS.RESUME',
+        'PROJECTS.DESCRIPTIONS.ZZIELENIAKA_LEAFLET',
+        'PROJECTS.DESCRIPTIONS.ZZIELENIAKA_POSTER',
       ])
       .subscribe((res) => {
         let titles = res;
@@ -112,38 +124,32 @@ export class PortfolioComponent implements OnInit {
           new Graphic(
             titles['PROJECTS.TITLES.DOTGAMES_LAYOUT'],
             'dotgames-layout.png',
-            'Lorem ipsum lalal waf lhjegskh sehjksefhk sehkhkenkbjhke bfhjkhbsefb hjbesf',
             'https://drive.google.com/file/d/1Ic4yGCoqKtaYiaFGVcnEWuMJc_ShCoa-/view?usp=sharing'
           ),
           new Graphic(
             titles['PROJECTS.TITLES.FUDLI_LEAFLET'],
             'fudli-leaflet.png',
-            'Lorem ipsum lalal waf lhjegskh sehjksefhk sehkhkenkbjhke bfhjkhbsefb hjbesf',
             'https://drive.google.com/file/d/1YxVJ3Xsv1EMBJYN9C9a2xW7wTO6WtwUq/view?usp=sharing'
           ),
           new Graphic(
             titles['PROJECTS.TITLES.INVESTMENT_TEASER'],
             'investment-teaser.png',
-            'Lorem ipsum lalal waf lhjegskh sehjksefhk sehkhkenkbjhke bfhjkhbsefb hjbesf',
             'https://drive.google.com/file/d/1BzdX1unD4ruyZQp50lwQ4otiVSQDUjcY/view?usp=sharing'
           ),
 
           new Graphic(
             titles['PROJECTS.TITLES.ZZIELENIAKA_LEAFLET'],
             'zzieleniaka-leaflet.png',
-            'Lorem ipsum lalal waf lhjegskh sehjksefhk sehkhkenkbjhke bfhjkhbsefb hjbesf',
             'https://drive.google.com/file/d/1_Ic0VWM2tvmx3UxekgsiXScEZnBiC0WH/view?usp=sharing'
           ),
           new Graphic(
             titles['PROJECTS.TITLES.ZZIELENIAKA_POSTER'],
             'zzieleniaka-poster.png',
-            'Lorem ipsum lalal waf lhjegskh sehjksefhk sehkhkenkbjhke bfhjkhbsefb hjbesf',
             'https://drive.google.com/file/d/1VqAxFqS-Jsvkr_OafwVvt70gtT3NimzK/view?usp=sharing'
           ),
           new Graphic(
             titles['PROJECTS.TITLES.RESUME'],
             'my-cv.png',
-            'Lorem ipsum lalal waf lhjegskh sehjksefhk sehkhkenkbjhke bfhjkhbsefb hjbesf',
             'https://drive.google.com/file/d/1zArdIdHlMRbwt9Xv4TCzxID-IIsfDPAd/view?usp=sharing'
           ),
         ];

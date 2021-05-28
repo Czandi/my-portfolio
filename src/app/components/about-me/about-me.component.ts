@@ -97,10 +97,7 @@ export class AboutMeComponent implements OnInit, OnDestroy, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize() {
     let containerHeight = this.container.nativeElement.clientHeight;
-    console.log(containerHeight);
     if (this.previousHeight !== containerHeight) {
-      console.log(containerHeight);
-
       this.previousHeight = containerHeight;
       this.hamburgerWrapper.nativeElement.setAttribute(
         'style',

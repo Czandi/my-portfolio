@@ -161,20 +161,68 @@ $portfolio-height: 40px;
 }
 
 @include media(">=big-desktop") {
-  .basic,
-  .header,
-  .disable {
-    width: 240px !important;
-    height: 80px !important;
-    p {
-      width: 240px !important;
-      line-height: 80px !important;
+  .container {
+    border-radius: 45px;
+    &.header {
+      width: $header-width * 1.5;
+      height: $header-height * 1.5;
+      p {
+        width: $header-width * 1.5;
+        line-height: $header-height * 1.5;
+      }
+    }
+
+    &.basic {
+      width: $basic-width * 1.5;
+      height: $basic-height * 1.5;
+      p {
+        width: $basic-width * 1.5;
+        line-height: $basic-height * 1.5;
+      }
+    }
+
+    &.portfolio,
+    &.portfolio-secondary {
+      width: $portfolio-width * 1.5;
+      height: $portfolio-height * 1.5;
+      p {
+        width: $portfolio-width * 1.5;
+        line-height: $portfolio-height * 1.5;
+      }
     }
   }
+}
 
-  .button,
-  .under-button {
-    border-radius: 40px !important;
+@include media(">=4k-desktop") {
+  .container {
+    border-radius: 60px;
+    &.header {
+      width: $header-width * 2;
+      height: $header-height * 2;
+      p {
+        width: $header-width * 2;
+        line-height: $header-height * 2;
+      }
+    }
+
+    &.basic {
+      width: $basic-width * 2;
+      height: $basic-height * 2;
+      p {
+        width: $basic-width * 2;
+        line-height: $basic-height * 2;
+      }
+    }
+
+    &.portfolio,
+    &.portfolio-secondary {
+      width: $portfolio-width * 2;
+      height: $portfolio-height * 2;
+      p {
+        width: $portfolio-width * 2;
+        line-height: $portfolio-height * 2;
+      }
+    }
   }
 }
 

@@ -33,8 +33,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   private letterIndex: number = 0;
   private navbarServiceSub: Subscription;
 
-  public slideIn: string = 'visible';
-  public popUp: string = 'visible';
+  public slideIn: string = 'hide';
+  public popUp: string = 'hide';
   public showNavbar: boolean = false;
 
   constructor(
@@ -108,7 +108,6 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   typing(): void {
-    console.log(this.headerLine);
     this.headerLineText.nativeElement.textContent = this.headerLine.slice(
       0,
       ++this.letterIndex
